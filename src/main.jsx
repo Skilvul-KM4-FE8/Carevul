@@ -6,6 +6,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import ListDoctor from './pages/ListDoctor.jsx'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -14,6 +16,7 @@ const router = createBrowserRouter(
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         <Route path="/home" element={<Home />} />
         <Route path="/article" element={<About />} />
+        <Route path="/list-doctor" element={<ListDoctor />} />
 
       </Route>
     </>
