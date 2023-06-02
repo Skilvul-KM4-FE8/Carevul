@@ -10,6 +10,11 @@ const ListDoctor = () => {
                         <p className="text-secondary">Pilih dokter yang sesuai dengan kebutuhan kamu yuk</p>
                     </Col>
                 </Row>
+                <Row>
+                    <Col>
+                        <div className="card shadow">Test</div>
+                    </Col> 
+                </Row>
             </Container>
         </>
     )
