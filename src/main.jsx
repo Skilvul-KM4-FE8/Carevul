@@ -1,21 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+// import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ListDoctor from './pages/ListDoctor.jsx'
+import Layout from './components/Layout.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* Ini Layout biar tetep ada di semua halaman. Misalnya Navbar, Footer Bisa di taroh sini */}
-      <Route path="/" element={<Navbar />} errorElement={<ErrorPage />} >
+      <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
-        <Route path="/home" element={<Home />} />
-        <Route path="/article" element={<About />} />
+        {/* <Route path="/home" element={<Home />} /> */}
+        {/* <Route path="/article" element={<About />} /> */}
         <Route path="/list-doctor" element={<ListDoctor />} />
 
       </Route>

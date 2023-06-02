@@ -1,8 +1,8 @@
 const ListDoctor = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <h1>Testtahjsdjdas</h1>
+        </>
     )
 }
 
