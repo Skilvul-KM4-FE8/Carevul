@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
+import NavbarComponent from "./Navbar";
 
 const Layout = () => {
   return (
     <>
-      <h1>Ini Navbar</h1>
+      <NavbarComponent />
 
       <Outlet />
+
+      <h3>Footer</h3>
     </>
   );
 };

@@ -1,0 +1,15 @@
+.card-doctor {
+    background-color: #F9FBFD;
+}
+
+
+
+.doctor-name {
+    text-align: center;
+}
+
+@media (min-width: 640px) { 
+    .doctor-name {
+        text-align: left;
+    }
+}
