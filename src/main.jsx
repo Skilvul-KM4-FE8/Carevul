@@ -5,11 +5,7 @@ import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import ListDoctor from './pages/ListDoctor.jsx'
 import Layout from './components/Layout.jsx'
-import PaymentDoctor from './pages/PaymentDoctor.jsx'
-import PaymentPage from './pages/PaymentPage'
 
 
 const router = createBrowserRouter(
@@ -19,10 +15,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/article" element={<About />} /> */}
-        <Route path="/paymentdoctor" element={<PaymentPage />} />
-        <Route path="/listdoctor" element={<ListDoctor />} />
-
+        <Route path="/articlehome" element={<ArticleHome/>}/>
       </Route>
     </>
   )
