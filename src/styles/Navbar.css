@@ -1,0 +1,15 @@
+.nav-link {
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.nav-link:hover {
+  align-items: center;
+  justify-content: center;
+  color: rgb(13, 0, 255);
+}
+
+.nav-link .Button {
+  color: aqua;
+}
