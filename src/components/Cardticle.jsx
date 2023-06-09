@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/article-home.css";
 import { Link } from "react-router-dom";
+import { colors } from "@mui/material";
 
 function Cardticle() {
   const [cards, setCard] = useState([])
@@ -16,18 +17,16 @@ function Cardticle() {
 
   return (
     <>
-      {/* <section id="card" className="article-card">
-        <Container fluid>
-          <Row> */}
             {cards.map(item => (
-                <Col sm={4} key={item.id}>
+                <Col lg={{ span: 4, offset: 0 }} key={item.id} id="col-card">
+                {/* </Col><Col md={4} key={item.id} id="col-card"> */}
                   <div>
-                    <Card>
-                      <Card.Img variant="top" src={item.img} />
-                      <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                        <Card.Text>{item.desc}</Card.Text>
-                        <a href={item.link} className="btn btn-primary">
+                    <Card className="card" id="card">
+                      <Card.Img variant="top" src={item.img} id="card-img"/>
+                      <Card.Body className="card-body">
+                        <Card.Title className="card-title">{item.title}</Card.Title>
+                        <Card.Text className="card-text">{item.desc}</Card.Text>
+                        <a href={item.link} id="card-goto-read">
                           Baca Selengkapnya
                         </a>
                       </Card.Body>
@@ -35,9 +34,7 @@ function Cardticle() {
                   </div>
                 </Col>
             ))}
-          {/* </Row>
-        </Container>
-      </section> */}
+
     </>
   )
 }
