@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ListDoctor from './pages/ListDoctor.jsx'
 import Layout from './components/Layout.jsx'
-import PaymentDoctor from './pages/PaymentDoctor.jsx'
 import PaymentPage from './pages/PaymentPage'
 
 
