@@ -11,7 +11,7 @@ function Login() {
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-7">
             <div class="header">
-              <h1>Hallo, Carefriends</h1>
+              <h1>Halo, Carefriends</h1>
               <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
             </div>
             <div class="login-form">
