@@ -10,6 +10,7 @@ import ListDoctor from './pages/ListDoctor.jsx'
 import Layout from './components/Layout.jsx'
 import PaymentDoctor from './pages/PaymentDoctor.jsx'
 import PaymentPage from './pages/PaymentPage'
+import Login from './pages/login'
 
 
 const router = createBrowserRouter(
@@ -22,8 +23,11 @@ const router = createBrowserRouter(
         {/* <Route path="/article" element={<About />} /> */}
         <Route path="/paymentdoctor" element={<PaymentPage />} />
         <Route path="/listdoctor" element={<ListDoctor />} />
+        
 
       </Route>
+
+      <Route path="/login" element={<Login/>} />
     </>
   )
 )
