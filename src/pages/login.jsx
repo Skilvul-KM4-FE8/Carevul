@@ -1,9 +1,46 @@
 import React from 'react'
+import "./../styles/loginregis.css"
+import loginLogo from './../assets/login.svg';
 
-function login() {
+function Login() {
   return (
-    <div>login</div>
+    <div>
+    <section class="login d-flex">
+      <div class="login-left h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-7">
+            <div class="header">
+              <h1>Hallo, Carefriends</h1>
+              <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
+            </div>
+            <div class="login-form">
+
+              <form id="form-login">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" />
+
+                <label for="password" class="form-label mrgn-1">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Masukkan Password" />
+
+                <button class="btn-2" type="submit">Login</button>
+              </form>
+              <p class="fsize-15 d-block text-center">
+                Kamu belum punya akun?
+                <a href="register.html" class="text-decoration-none"><span class="regis">Daftar Disini</span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login-right w-50 h-100 bg-color">
+        <div class="d-flex justify-content-center py-5">
+          <img src={loginLogo} alt="" />
+        </div>
+      </div>
+    </section>
+
+    </div>
   )
 }
 
-export default login
+export default Login
