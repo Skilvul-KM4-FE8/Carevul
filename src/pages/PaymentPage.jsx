@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
-import Calendar from "../components/Calendar"
+import Calendar from "react-calendar"
 
 const PaymentPage = () => {
     return (
