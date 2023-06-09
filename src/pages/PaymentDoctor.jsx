@@ -1,5 +1,6 @@
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { Col, Container, Row } from "react-bootstrap"
+import Calendar from "react-calendar";
 // import Calendar from "../components/Calendar"
 import { Link } from "react-router-dom";
 
@@ -10,10 +11,11 @@ const PaymentDoctor = ({ children }) => {
             <Container>
                 <Row>
                     <Col>
-                        <LocalizationProvider dateAdapter={AdapterMoment}>
+                        {/* <LocalizationProvider dateAdapter={AdapterMoment}>
                             {children}
                         </LocalizationProvider>
-                        {/* <Calendar /> */}
+                        <Calendar /> */}
+                        <Calendar />
                     </Col>
                 </Row>
             </Container>
