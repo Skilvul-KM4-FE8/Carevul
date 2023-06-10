@@ -1,14 +1,43 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
-import "./../styles/article-home.css";
-import Cardticle from "../components/Cardticle";
+import "./../styles/article-read.css";
+import { render } from "react-dom";
 
-const ArticleCascara = () => {
+function ArticleCascara() {
+  const [datas, setData] = useState([])
+
+   useEffect(() => {
+    axios(
+      "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?page=2&limit=1"
+      ).then(result => setData(result.data))
+      }, [])
+  
   return (
     <>
-      
+        <div>
+          <Container>
+            <Row>
+              {datas.map(item => (
+                <Col lg={{ span: 8, offset: 0 }} key={item.id}>
+                  <div>
+                    <p id="breadcrumbs">Artikel > Ini Manfaat Cascara atau Kulit Buah Kopi untuk Kesehatan</p>
+                    <h3 id="main-title">{item.title}</h3>
+                    <p id="date">{item.date}</p>
+                    <img src={item.img} id="img-thumbnail"></img><br></br>
+                    <p id="fulltext">{item.fulltext}</p>
+                  </div>
+                </Col>
+                ))}
+                <Col lg={{ span: 3, offset: 0 }}>
+                </Col>
+              </Row>
+            </Container>
+        </div>
     </>
-  );
-};
+  )
+}
 
 
 

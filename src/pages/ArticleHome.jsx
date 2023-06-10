@@ -8,7 +8,7 @@ const ArticleHome = () => {
   return (
     <>
       <div className="article-top">
-        <h4 id="article-title">Artikel Kesehatan Terpopuler</h4>
+        <h3 id="article-title">Artikel Kesehatan Terpopuler</h3>
         <p id="article-subtitle">Terdapat beberapa artikel terpopuler yang dapat kamu akses sesuai dengan kebutuhanmu nih Carefriends!</p>
       </div>
       <section id="card" className="article-card">

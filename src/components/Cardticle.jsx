@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/article-home.css";
-import { Link } from "react-router-dom";
-import { colors } from "@mui/material";
-import ArticleOne from "../pages/ArticleCascara";
 
 function Cardticle() {
   const [cards, setCard] = useState([])

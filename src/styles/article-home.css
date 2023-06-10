@@ -117,22 +117,25 @@ p {
 }
 
 .card-title {
-    line-height: 150%;
+    line-height: 130%;
     color: #151515;
     font-weight: 600;
+    font-size: 19px;
 }
 
 .card-text {
-    line-height: 125%;
+    line-height: 130%;
     font-size: 14px;
     color: #5f5f5f;
     font-weight: 400;
+    text-align: left;
 }
 
 #card-goto-read {
     font-weight: 600;
     color: #3655D5;
     font-size: 15px;
+    text-decoration: none;
 }
 
 /* footer */
