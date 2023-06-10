@@ -8,10 +8,14 @@ import shopeepayLogo from "./../assets/shopeepay.svg"
 import ovoLogo from "./../assets/ovo.svg"
 import danaLogo from "./../assets/dana.svg"
 import { useState } from "react"
+import { PaymentContext } from "../context/paymentContext"
 
 const PaymentPage = () => {
     
     const [radioVal, setRadioVal] = useState(false);
+
+    // from Context
+    const { payment, setPayment } = useContext(PaymentContext);
 
     const handleRadioChange = (event) => {
 
@@ -22,6 +26,11 @@ const PaymentPage = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(radioVal)
+        setPayment({
+            idUser: "iduser",
+            idDoctor: "iddoctor",
+            bookingId: toString(Math.random),
+        });
     };
 
     return (
@@ -61,12 +70,6 @@ const PaymentPage = () => {
                             <Col className="mt-5">
                                 <h4 className="text-carevul fw-bold">Pilih Metode Pembayaran</h4>
                                     <form onSubmit={handleSubmit}>
-                                        {/* For hidden input */}
-                                            <input type="text" hidden value={20000} name="price" />
-                                            <input type="text" hidden value={1} name="idUser" />
-                                            <input type="text" hidden value={"doctor id"} name="idDoctor" />
-                                            <input type="text" hidden value={toString(Math.random)} name="bookingId" />
-                                        {/* End of hidden input */}
                                         {/* Gopay */}
                                             <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
                                                 {/* Section Input */}
