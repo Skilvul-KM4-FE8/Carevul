@@ -7,7 +7,7 @@ import gopayLogo from "./../assets/gopay.svg"
 import shopeepayLogo from "./../assets/shopeepay.svg"
 import ovoLogo from "./../assets/ovo.svg"
 import danaLogo from "./../assets/dana.svg"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { PaymentContext } from "../context/paymentContext"
 
 const PaymentPage = () => {
@@ -18,20 +18,26 @@ const PaymentPage = () => {
     const { payment, setPayment } = useContext(PaymentContext);
 
     const handleRadioChange = (event) => {
-
         setRadioVal(event.target.value);
         console.log(radioVal)
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(radioVal)
+        const idBooking = Math.random();
+        // console.log(radioVal)
         setPayment({
             idUser: "iduser",
             idDoctor: "iddoctor",
-            bookingId: toString(Math.random),
+            bookingId: idBooking,
+            paymentMethod: radioVal,
         });
+        // console.log(payment)
     };
+    
+    useEffect(() => {
+        console.log(payment)
+    }, [payment]);
 
     return (
         <>
