@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/article-read.css";
-import { render } from "react-dom";
+import ReadMore1 from "../components/Read-More/readmore1";
 
 function ArticleCascara() {
   const [datas, setData] = useState([])
@@ -20,7 +20,7 @@ function ArticleCascara() {
           <Container>
             <Row>
               {datas.map(item => (
-                <Col lg={{ span: 8, offset: 0 }} key={item.id}>
+                <Col lg={{ span: 7, offset: 0 }} key={item.id}>
                   <div>
                     <p id="breadcrumbs">Artikel > Ini Manfaat Cascara atau Kulit Buah Kopi untuk Kesehatan</p>
                     <h3 id="main-title">{item.title}</h3>
@@ -30,7 +30,10 @@ function ArticleCascara() {
                   </div>
                 </Col>
                 ))}
-                <Col lg={{ span: 3, offset: 0 }}>
+                {/* Another Article Card */}
+                <Col lg={{ span: 3, offset: 2 }}>
+                  <h4>Baca Artikel Lainnya</h4>
+                  {/* <ReadMore1 /> */}
                 </Col>
               </Row>
             </Container>
