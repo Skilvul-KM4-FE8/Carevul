@@ -77,12 +77,12 @@ const PaymentPage = () => {
                                 <h4 className="text-carevul fw-bold">Pilih Metode Pembayaran</h4>
                                     <form onSubmit={handleSubmit}>
                                         {/* Gopay */}
-                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                            <div className="form-check ms-0 py-2 px-5 border rounded mt-1 shadow-sm  border-2 border-primary border-carevul">
                                                 {/* Section Input */}
                                                     <div className="container">
                                                         <div className="row">
                                                             <div className="col-1 d-flex justify-content-center align-items-center">
-                                                                <input className="form-check-input" type="radio" name="book-date" id="gopay" value={"gopay"} onClick={(e) => handleRadioChange(e)} />
+                                                                <input className="form-check-input circle-radio-btn" type="radio" name="book-date" id="gopay" value={"gopay"} onClick={(e) => handleRadioChange(e)} />
                                                             </div>
                                                             <div className="col">
                                                                 <label className="form-check-label" htmlFor="gopay">
@@ -96,12 +96,12 @@ const PaymentPage = () => {
                                             </div>
                                         {/* End Gopay */}
                                         {/* shopeepay */}
-                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                            <div className="form-check ms-0 py-2 px-5 border rounded mt-1 shadow-sm  border-2 border-primary">
                                                 {/* Section Input */}
                                                     <div className="container">
                                                         <div className="row">
                                                             <div className="col-1 d-flex justify-content-center align-items-center">
-                                                                <input className="form-check-input" type="radio" name="book-date" id="shopeepay" value={"shopeepay"} onClick={(e) => handleRadioChange(e)} />
+                                                                <input className="form-check-input circle-radio-btn" type="radio" name="book-date" id="shopeepay" value={"shopeepay"} onClick={(e) => handleRadioChange(e)} />
                                                             </div>
                                                             <div className="col">
                                                                 <label className="form-check-label" htmlFor="shopeepay">
@@ -115,12 +115,12 @@ const PaymentPage = () => {
                                             </div>
                                         {/* End shopeepay */}
                                         {/* dana */}
-                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                            <div className="form-check ms-0 py-2 px-5 border rounded mt-1 shadow-sm  border-2 border-primary">
                                                 {/* Section Input */}
                                                     <div className="container">
                                                         <div className="row">
                                                             <div className="col-1 d-flex justify-content-center align-items-center">
-                                                                <input className="form-check-input" type="radio" name="book-date" id="dana" value={"dana"} onClick={(e) => handleRadioChange(e)} />
+                                                                <input className="form-check-input circle-radio-btn" type="radio" name="book-date" id="dana" value={"dana"} onClick={(e) => handleRadioChange(e)} />
                                                             </div>
                                                             <div className="col">
                                                                 <label className="form-check-label" htmlFor="dana">
@@ -134,12 +134,12 @@ const PaymentPage = () => {
                                             </div>
                                         {/* End dana */}
                                         {/* ovo */}
-                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                            <div className="form-check ms-0 py-2 px-5 border rounded mt-1 shadow-sm  border-2 border-primary">
                                                 {/* Section Input */}
                                                     <div className="container">
                                                         <div className="row">
                                                             <div className="col-1 d-flex justify-content-center align-items-center">
-                                                                <input className="form-check-input" type="radio" name="book-date" id="ovo" value={"ovo"} onClick={(e) => handleRadioChange(e)} />
+                                                                <input className="form-check-input circle-radio-btn" type="radio" name="book-date" id="ovo" value={"ovo"} onClick={(e) => handleRadioChange(e)} />
                                                             </div>
                                                             <div className="col">
                                                                 <label className="form-check-label" htmlFor="ovo">
