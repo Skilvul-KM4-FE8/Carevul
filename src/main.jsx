@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ListDoctor from './pages/ListDoctor.jsx'
 import Layout from './components/Layout.jsx'
 import PaymentPage from './pages/PaymentPage'
+import PaymentProvider from './context/paymentContext'
+
+
 
 
 const router = createBrowserRouter(
@@ -29,7 +32,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
-    <RouterProvider router={router} />
+    <PaymentProvider>
+      {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
+      <RouterProvider router={router} />
+    </PaymentProvider>
   </React.StrictMode>,
 )
