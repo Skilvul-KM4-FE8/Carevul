@@ -9,7 +9,6 @@ const NavbarComponent = () => {
 
   return (
     <>
-      <br />
       <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand href="#home">Ini Navbar Pokoknya, nanti ganti aja</Navbar.Brand>

@@ -121,7 +121,7 @@
   /* background: #ffff76; */
   background: #3655D5;
   color: white;
-  border-radius: 5zrem;
+  border-radius: 5px;
 }
 
 .react-calendar__tile--now:enabled:hover,
