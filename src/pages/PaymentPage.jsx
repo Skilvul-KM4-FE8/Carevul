@@ -7,8 +7,23 @@ import gopayLogo from "./../assets/gopay.svg"
 import shopeepayLogo from "./../assets/shopeepay.svg"
 import ovoLogo from "./../assets/ovo.svg"
 import danaLogo from "./../assets/dana.svg"
+import { useState } from "react"
 
 const PaymentPage = () => {
+    
+    const [radioVal, setRadioVal] = useState(false);
+
+    const handleRadioChange = (event) => {
+
+        setRadioVal(event.target.value);
+        console.log(radioVal)
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(radioVal)
+    };
+
     return (
         <>
             {/* <h1>Payment Page</h1> */}
@@ -45,87 +60,93 @@ const PaymentPage = () => {
                         <Row>
                             <Col className="mt-5">
                                 <h4 className="text-carevul fw-bold">Pilih Metode Pembayaran</h4>
-                                <form >
-                                    {/* Gopay */}
-                                        <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
-                                            {/* Section Input */}
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-1 d-flex justify-content-center align-items-center">
-                                                            <input className="form-check-input" type="radio" name="book-date" id="gopay"  />
-                                                        </div>
-                                                        <div className="col">
-                                                            <label className="form-check-label" htmlFor="gopay">
-                                                                <p className="lead mt-3"><img src={gopayLogo} width={100} /></p>
-                                                                {/* <h5 className="text-carevul">Rp. 20000</h5> */}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {/* End Section Input */}
-                                        </div>
-                                    {/* End Gopay */}
-                                    {/* shopeepay */}
-                                        <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
-                                            {/* Section Input */}
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-1 d-flex justify-content-center align-items-center">
-                                                            <input className="form-check-input" type="radio" name="book-date" id="shopeepay"  />
-                                                        </div>
-                                                        <div className="col">
-                                                            <label className="form-check-label" htmlFor="shopeepay">
-                                                                <p className="lead mt-3"><img src={shopeepayLogo} width={100} /></p>
-                                                                {/* <h5 className="text-carevul">Rp. 20000</h5> */}
-                                                            </label>
+                                    <form onSubmit={handleSubmit}>
+                                        {/* For hidden input */}
+                                            <input type="text" hidden value={20000} name="price" />
+                                            <input type="text" hidden value={1} name="idUser" />
+                                            <input type="text" hidden value={"doctor id"} name="idDoctor" />
+                                            <input type="text" hidden value={toString(Math.random)} name="bookingId" />
+                                        {/* End of hidden input */}
+                                        {/* Gopay */}
+                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                                {/* Section Input */}
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-1 d-flex justify-content-center align-items-center">
+                                                                <input className="form-check-input" type="radio" name="book-date" id="gopay" value={"gopay"} onClick={(e) => handleRadioChange(e)} />
+                                                            </div>
+                                                            <div className="col">
+                                                                <label className="form-check-label" htmlFor="gopay">
+                                                                    <p className="lead mt-3"><img src={gopayLogo} width={100} /></p>
+                                                                    {/* <h5 className="text-carevul">Rp. 20000</h5> */}
+                                                                </label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            {/* End Section Input */}
-                                        </div>
-                                    {/* End shopeepay */}
-                                    {/* dana */}
-                                        <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
-                                            {/* Section Input */}
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-1 d-flex justify-content-center align-items-center">
-                                                            <input className="form-check-input" type="radio" name="book-date" id="dana"  />
-                                                        </div>
-                                                        <div className="col">
-                                                            <label className="form-check-label" htmlFor="dana">
-                                                                <p className="lead mt-3"><img src={danaLogo} width={100} /></p>
-                                                                {/* <h5 className="text-carevul">Rp. 20000</h5> */}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {/* End Section Input */}
-                                        </div>
-                                    {/* End dana */}
-                                    {/* ovo */}
-                                        <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
-                                            {/* Section Input */}
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-1 d-flex justify-content-center align-items-center">
-                                                            <input className="form-check-input" type="radio" name="book-date" id="ovo"  />
-                                                        </div>
-                                                        <div className="col">
-                                                            <label className="form-check-label" htmlFor="ovo">
-                                                                <p className="lead mt-3"><img src={ovoLogo} width={100} /></p>
-                                                                {/* <h5 className="text-carevul">Rp. 20000</h5> */}
-                                                            </label>
+                                                {/* End Section Input */}
+                                            </div>
+                                        {/* End Gopay */}
+                                        {/* shopeepay */}
+                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                                {/* Section Input */}
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-1 d-flex justify-content-center align-items-center">
+                                                                <input className="form-check-input" type="radio" name="book-date" id="shopeepay" value={"shopeepay"} onClick={(e) => handleRadioChange(e)} />
+                                                            </div>
+                                                            <div className="col">
+                                                                <label className="form-check-label" htmlFor="shopeepay">
+                                                                    <p className="lead mt-3"><img src={shopeepayLogo} width={100} /></p>
+                                                                    {/* <h5 className="text-carevul">Rp. 20000</h5> */}
+                                                                </label>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            {/* End Section Input */}
+                                                {/* End Section Input */}
+                                            </div>
+                                        {/* End shopeepay */}
+                                        {/* dana */}
+                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                                {/* Section Input */}
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-1 d-flex justify-content-center align-items-center">
+                                                                <input className="form-check-input" type="radio" name="book-date" id="dana" value={"dana"} onClick={(e) => handleRadioChange(e)} />
+                                                            </div>
+                                                            <div className="col">
+                                                                <label className="form-check-label" htmlFor="dana">
+                                                                    <p className="lead mt-3"><img src={danaLogo} width={100} /></p>
+                                                                    {/* <h5 className="text-carevul">Rp. 20000</h5> */}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {/* End Section Input */}
+                                            </div>
+                                        {/* End dana */}
+                                        {/* ovo */}
+                                            <div className="form-check ms-0 py-3 px-5 border rounded mt-1 shadow-sm  border-2">
+                                                {/* Section Input */}
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-1 d-flex justify-content-center align-items-center">
+                                                                <input className="form-check-input" type="radio" name="book-date" id="ovo" value={"ovo"} onClick={(e) => handleRadioChange(e)} />
+                                                            </div>
+                                                            <div className="col">
+                                                                <label className="form-check-label" htmlFor="ovo">
+                                                                    <p className="lead mt-3"><img src={ovoLogo} width={100} /></p>
+                                                                    {/* <h5 className="text-carevul">Rp. 20000</h5> */}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {/* End Section Input */}
+                                            </div>
+                                        {/* End ovo */}
+                                        <div className="col-md-12 d-flex">
+                                            <button type="submit" className="btn color-carevul-gradient text-white mt-4 px-5 py-2 flex-fill" id="book-btn">Buat Janji</button>
                                         </div>
-                                    {/* End ovo */}
-                                    <div className="col-md-12 d-flex">
-                                        <button type="submit" className="btn color-carevul-gradient text-white mt-4 px-5 py-2 flex-fill" id="book-btn">Buat Janji</button>
-                                    </div>
-                                </form>
+                                    </form>
                             </Col>
                         </Row>
                     </Container>
