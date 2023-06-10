@@ -6,8 +6,8 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
   padding: 1rem 1rem 3rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .react-calendar--doubleView {
@@ -101,7 +101,8 @@
 
 .react-calendar__tile {
   max-width: 100%;
-  padding: 10px 6.6667px;
+  /* padding: 10px 6.6667px; */
+  padding: 35px;
   background: none;
   text-align: center;
   line-height: 16px;
@@ -120,7 +121,7 @@
   /* background: #ffff76; */
   background: #3655D5;
   color: white;
-  border-radius: 50rem;
+  border-radius: 5zrem;
 }
 
 .react-calendar__tile--now:enabled:hover,
