@@ -9,11 +9,23 @@ import ovoLogo from "./../assets/ovo.svg"
 import danaLogo from "./../assets/dana.svg"
 import { useContext, useEffect, useState } from "react"
 import { PaymentContext } from "../context/paymentContext"
-import { Outlet } from "react-router"
+import { Outlet, useNavigate, useParams } from "react-router"
 
 const PaymentPage = () => {
     
     const [radioVal, setRadioVal] = useState(false);
+    const [doctor, setDoctor] = useState({})
+
+    const navigate = useNavigate();
+    const param = useParams();
+
+    console.log(param.id)
+
+    useEffect(() => {
+        fetch(`https://64506b72a3221969114a2d25.mockapi.io/doctors/${param.id}`)
+        .then((response) => response.json())
+        .then((data) => setDoctor(data));
+    }, []);
 
     // from Context
     const { payment, setPayment } = useContext(PaymentContext);
@@ -29,11 +41,13 @@ const PaymentPage = () => {
         // console.log(radioVal)
         setPayment({
             idUser: "iduser",
-            idDoctor: "iddoctor",
-            bookingId: idBooking,
+            idDoctor: param.id,
+            // bookingId: idBooking,
+            price: doctor.totalPatient,
             paymentMethod: radioVal,
         });
         // console.log(payment)
+        navigate("/bookingpage");
     };
     
     useEffect(() => {
@@ -63,8 +77,8 @@ const PaymentPage = () => {
                                         </Col>
                                         <Col className="text-start mb-3" md={7} >
                                         <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">dr. Testt bin udin</h4>
-                                        <p className=" doctor-name">Dokter Umum <br /> RS. Umum Isekai, Isekai, Indonesia</p>
-                                        <h5 className=" doctor-name">  <span className="text-carevul ">Rp. 20.000</span></h5>
+                                        <p className=" doctor-name">Dokter {doctor.category} <br /> {doctor.hospital}</p>
+                                        <h5 className=" doctor-name">  <span className="text-carevul ">Rp. {doctor.totalPatient}</span></h5>
                                         </Col>
                                         <Col className="d-flex justify-content-center align-items-center">
                                         {/* <Link to={"/list-doctor/id"} className="btn text-white fw-bold color-carevul-gradient px-5 py-2 shadow-sm">Pilih Dokter</Link> */}
