@@ -6,26 +6,17 @@
   font-family: "Poppins", sans-serif;
 }
 
-.Navbar {
-  align-items: center;
-  justify-content: center;
-  color: black;
+.login {
+  border: 1px solid !important;
 }
 
-.NavLink {
-  align-items: center;
-  justify-content: center;
-  color: black;
+.login:hover {
+  background-image: linear-gradient(150deg, #3a8ef6, #7c1add) !important;
+  color: white !important;
 }
 
-.nav-link:hover {
-  align-items: center;
-  justify-content: center;
-  color: rgb(13, 0, 255);
-}
-
-.nav-link .Button {
-  color: aqua;
+.active {
+  color: #3655d5 !important;
 }
 
 /* from html  */
