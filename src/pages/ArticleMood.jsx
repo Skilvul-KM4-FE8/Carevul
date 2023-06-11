@@ -10,7 +10,7 @@ function ArticleMood() {
 
    useEffect(() => {
     axios(
-      "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?page=2&limit=1"
+      "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?page=5&limit=1"
       ).then(result => setData(result.data))
       }, [])
   
@@ -22,7 +22,7 @@ function ArticleMood() {
               {datas.map(item => (
                 <Col lg={{ span: 7, offset: 0 }} key={item.id}>
                   <div>
-                    <p id="breadcrumbs">Artikel : Ini Manfaat Cascara atau Kulit Buah Kopi untuk Kesehatan</p>
+                    <p id="breadcrumbs">Artikel : Ini Cara Meningkatkan Mood setelah Lelah Bekerja</p>
                     <h3 id="main-title">{item.title}</h3>
                     <p id="date">{item.date}</p>
                     <img src={item.img} id="img-thumbnail"></img><br></br>
