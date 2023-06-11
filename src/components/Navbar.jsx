@@ -12,7 +12,7 @@ const NavbarComponent = () => {
       <br />
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
             {" "}
             <div className="logoApp">
               <img src={CarevulLogo} alt="Your SVG" />
@@ -20,27 +20,24 @@ const NavbarComponent = () => {
           </Navbar.Brand>
 
           <Nav className="me-auto">
-            {/* <Nav.Link href="#home">Home</Nav.Link> */}
-            <NavLink to={"/"} className="nav-link">
+            <NavLink to={"/"} className="nav-link active">
               Home
             </NavLink>
-            <NavLink to={"/paymentdoctor"} className="nav-link">
+            <NavLink to={"/paymentdoctor"} className="nav-link active">
               Payment Test
             </NavLink>
-            <NavLink to={"/listdoctor"} className="nav-link">
+            <NavLink to={"/listdoctor"} className="nav-link active">
               List Doctor
             </NavLink>
-            <NavLink to={"/testt"} className="nav-link">
+            <NavLink to={"/testt"} className="nav-link active">
               Menu klen
             </NavLink>
-            <NavLink to={"/"} className="nav-link">
+            <NavLink to={"/"} className="nav-link active">
               <Button variant="outline-primary">Login</Button>
             </NavLink>
-            <NavLink to={"/"} className="nav-link">
-              <Button variant="secondary">Register</Button>
+            <NavLink to={"/"} className="nav-link active">
+              <Button variant="primary">Register</Button>
             </NavLink>
-            {/* <Nav.Link href="#features">Pilih Dokter</Nav.Link> */}
-            {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>
         </Container>
       </Navbar>
