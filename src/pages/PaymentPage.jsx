@@ -9,6 +9,7 @@ import ovoLogo from "./../assets/ovo.svg"
 import danaLogo from "./../assets/dana.svg"
 import { useContext, useEffect, useState } from "react"
 import { PaymentContext } from "../context/paymentContext"
+import { Outlet } from "react-router"
 
 const PaymentPage = () => {
     
@@ -163,6 +164,7 @@ const PaymentPage = () => {
                     </Col>
                 </Row>
             </Container>
+            <Outlet />bias 
         </>
     )
 }

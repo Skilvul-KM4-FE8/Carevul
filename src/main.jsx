@@ -10,6 +10,7 @@ import ListDoctor from './pages/ListDoctor.jsx'
 import Layout from './components/Layout.jsx'
 import PaymentPage from './pages/PaymentPage'
 import PaymentProvider from './context/paymentContext'
+import BookingPage from './pages/BookingPage'
 
 
 
@@ -22,8 +23,10 @@ const router = createBrowserRouter(
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
         {/* <Route path="/article" element={<About />} /> */}
-        <Route path="/paymentdoctor" element={<PaymentPage />} />
         <Route path="/listdoctor" element={<ListDoctor />} />
+        <Route path="/paymentdoctor" element={<PaymentPage />} />
+        <Route path="bookingpage" element={<BookingPage />} />
+        
 
       </Route>
     </>
