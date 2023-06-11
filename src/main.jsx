@@ -11,6 +11,7 @@ import Layout from './components/Layout.jsx'
 import PaymentPage from './pages/PaymentPage'
 import PaymentProvider from './context/paymentContext'
 import BookingPage from './pages/BookingPage'
+import Consult from './pages/Consult'
 
 
 
@@ -26,7 +27,9 @@ const router = createBrowserRouter(
         <Route path="/listdoctor" element={<ListDoctor />} />
         <Route path="/paymentdoctor/:id" element={<PaymentPage />} />
         <Route path="/bookingpage" element={<BookingPage />} />
-        
+        <Route path="/consult" element={<Consult />} >
+          
+        </Route>
 
       </Route>
     </>
