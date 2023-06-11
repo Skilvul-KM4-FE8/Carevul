@@ -40,6 +40,11 @@ p {
 }
 
 /* ============ Article Read ==========*/
+.article-read {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
 #fulltext {
     white-space: pre-line;
     line-height: 170%;
@@ -68,3 +73,14 @@ p {
     margin-bottom: 20px;
 }
 
+#read-more-title {
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 600;
+    color: #303030;
+}
+
+.article-more {
+    margin-top: 60px;
+}

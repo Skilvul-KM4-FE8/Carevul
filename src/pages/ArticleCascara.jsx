@@ -17,7 +17,7 @@ function ArticleCascara() {
   return (
     <>
         <div>
-          <Container>
+          <Container className="article-read">
             <Row>
               {datas.map(item => (
                 <Col lg={{ span: 7, offset: 0 }} key={item.id}>
@@ -31,9 +31,9 @@ function ArticleCascara() {
                 </Col>
                 ))}
                 {/* Another Article Card */}
-                <Col lg={{ span: 3, offset: 2 }}>
-                  <h4>Baca Artikel Lainnya</h4>
-                  {/* <ReadMore1 /> */}
+                <Col lg={{ span: 4, offset: 1 }} className="article-more">
+                  <h5 id="read-more-title">Baca Artikel Lainnya</h5>
+                  <ReadMore1 />
                 </Col>
               </Row>
             </Container>

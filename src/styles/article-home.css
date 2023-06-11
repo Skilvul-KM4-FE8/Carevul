@@ -138,37 +138,6 @@ p {
     text-decoration: none;
 }
 
-/* footer */
-.text-carevul {
-  color: #296fde;
-}
-
-.bg-color-footer {
-  background-color: #f9fbfd;
-}
-
-.text-gray {
-  color: #333333;
-}
-
-.social-media {
-  font-size: 30px;
-  color: #296fde;
-  width: 60%;
-}
-
-.list-footer {
-  list-style: none;
-}
-
-.list-footer a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.text-light-gray {
-  color: #5f6d7e;
-}
 /* Resopnsive CSS */
 
 /* Tablates */
