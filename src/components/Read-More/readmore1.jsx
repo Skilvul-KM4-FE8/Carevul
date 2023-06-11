@@ -9,7 +9,7 @@ function ReadMore1() {
 
   useEffect(() => {
     axios(
-      "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?limit=3"
+      "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?"
     ).then((result) => setData(result.data));
   }, []);
 
