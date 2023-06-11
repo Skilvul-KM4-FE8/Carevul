@@ -11,6 +11,7 @@ import Layout from './components/Layout.jsx'
 import PaymentDoctor from './pages/PaymentDoctor.jsx'
 import PaymentPage from './pages/PaymentPage'
 import Login from './pages/login'
+import Register from './pages/Register'
 
 
 const router = createBrowserRouter(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="/login" element={<Login/>} />
+      <Route path="/regis" element={<Register/>} />
     </>
   )
 )
