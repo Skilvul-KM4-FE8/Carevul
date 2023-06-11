@@ -92,18 +92,18 @@ p {
   margin-left: 10px;
 }
 
-#card-img {
+#card-more-img {
   width: 100%;
   height: auto;
 }
 
-.card-body {
+.body-more {
   background-color: #f4f6f8;
   padding: 20px;
   transition: transform 0.2s; /* Animation */
 }
 
-.card-body:hover {
+.body-more:hover {
   transform: scale(1.05);
 
 }

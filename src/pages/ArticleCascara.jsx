@@ -22,7 +22,7 @@ function ArticleCascara() {
               {datas.map(item => (
                 <Col lg={{ span: 7, offset: 0 }} key={item.id}>
                   <div>
-                    <p id="breadcrumbs">Artikel > Ini Manfaat Cascara atau Kulit Buah Kopi untuk Kesehatan</p>
+                    <p id="breadcrumbs">Artikel : Ini Manfaat Cascara atau Kulit Buah Kopi untuk Kesehatan</p>
                     <h3 id="main-title">{item.title}</h3>
                     <p id="date">{item.date}</p>
                     <img src={item.img} id="img-thumbnail"></img><br></br>
