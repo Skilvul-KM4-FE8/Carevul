@@ -4,7 +4,7 @@ import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from './components/Layout.jsx'
+
 
 import PaymentPage from './pages/PaymentPage'
 import PaymentProvider from './context/paymentContext'
@@ -80,4 +80,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </PaymentProvider>
   </React.StrictMode>,
 );
-
