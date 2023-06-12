@@ -5,6 +5,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './components/Layout.jsx'
+
 import ArticleHome from './pages/ArticleHome'
 import ArticleAltruisme from './pages/ArticleAltruisme'
 import ArticleHeatwave from './pages/ArticleHeatwave'
@@ -16,6 +17,12 @@ import ArticleStalk from './pages/ArticleStalk'
 import ArticleStress from './pages/ArticleStress'
 import ArticleVita from './pages/ArticleVita'
 
+import PaymentDoctor from './pages/PaymentDoctor.jsx'
+import PaymentPage from './pages/PaymentPage'
+import Login from './pages/login'
+import Register from './pages/Register'
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +31,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
+
         <Route path="/articlehome" element={<ArticleHome />}/>
         <Route path="/articlevita" element={<ArticleVita />}/>
         <Route path="/articlecascara" element={<ArticleCascara />}/>
@@ -34,7 +42,17 @@ const router = createBrowserRouter(
         <Route path="/articlekeluarga" element={<ArticleKeluarga />}/>
         <Route path="/articlestalk" element={<ArticleStalk />}/>
         <Route path="/articlealtruisme" element={<ArticleAltruisme />}/>
+
+        {/* <Route path="/article" element={<About />} /> */}
+        <Route path="/paymentdoctor" element={<PaymentPage />} />
+        <Route path="/listdoctor" element={<ListDoctor />} />
+        
+
+
       </Route>
+
+      <Route path="/login" element={<Login/>} />
+      <Route path="/regis" element={<Register/>} />
     </>
   )
 )
