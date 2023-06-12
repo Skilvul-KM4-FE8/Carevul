@@ -12,13 +12,51 @@ const BookingPage = () => {
     console.log(complaint)
     console.log(payment)
 
+    const handleChangeFullName = (e) => {
+        setFullName(e.target.value)
+        setPayment({
+            ...payment,
+            userName: e.target.value,
+            complaint: complaint
+        })
+        console.log(fullName)
+    }
+
+    const handleChangeComplaint = (e) => {
+        setComplaint(e.target.value)
+        setPayment({
+            ...payment,
+            userName: fullName,
+            complaint: e.target.value
+        })
+        console.log(payment)
+    }
+
     const handleSubmitFormBooking = (e) => {
         e.preventDefault()
         setPayment({
             ...payment,
-            client_name: fullName,
+            userName: fullName,
             complaint: complaint
         })
+
+        // post data to mockapi
+        fetch('https://64506b72a3221969114a2d25.mockapi.io/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payment)
+        })
+        .then(alert('Booking berhasil dilakukan'))
+        .catch(err => console.log(err))
+
+        // clear payment
+        setPayment(false)
+
+        // // show allert for success
+        // alert('Booking berhasil dilakukan')
+        
     }
 
     useEffect(() => {
@@ -46,11 +84,11 @@ const BookingPage = () => {
                                     Nama Dokter : <span className="text-carevul fw-bold">dr. Jakwan Bagung</span></p>
                                     <h6>Nama Lengkap :  </h6>
                                     <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="Masukkan Nama Lengkap" aria-label="Username" aria-describedby="basic-addon1" name="client_name" id="input-name" value={fullName} onChange={e => setFullName(e.target.value)} />
+                                        <input type="text" className="form-control" placeholder="Masukkan Nama Lengkap" aria-label="Username" aria-describedby="basic-addon1" name="client_name" id="input-name" value={fullName} onChange={e => handleChangeFullName(e)} />
                                     </div>
                                     <h6>Keluhan : </h6>
                                     <div className="form-floating">
-                                        <textarea className="form-control" placeholder="Leave a comment here" id="input-keluhan" value={complaint} onChange={(e) => setComplaint(e.target.value)} ></textarea>
+                                        <textarea className="form-control" placeholder="Leave a comment here" id="input-keluhan" value={complaint} onChange={(e) => handleChangeComplaint(e)} ></textarea>
                                         <label htmlFor="input-keluhan">Silahkan tuliskan keluhan anda : </label>
                                     </div>
                                     <div className="text-center mt-4">

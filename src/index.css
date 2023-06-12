@@ -18,3 +18,8 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   /* height: 100px; */
 }
+
+.active {
+  background-color: red !important;
+  color: white !important;
+}

@@ -5,8 +5,8 @@ const Layout = () => {
   return (
     <>
       <NavbarComponent />
-
-      <Outlet />
+        
+        <Outlet />
 
       <h3>Footer</h3>
     </>

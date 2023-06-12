@@ -12,7 +12,7 @@ const NavbarComponent = () => {
       <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand href="#home">Ini Navbar Pokoknya</Navbar.Brand>
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <NavLink to={"/"} className="nav-link">Home</NavLink>
             <NavLink to={"/paymentdoctor"} className="nav-link display-1">Payment Test</NavLink>
