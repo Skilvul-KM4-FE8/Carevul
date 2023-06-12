@@ -5,7 +5,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './components/Layout.jsx'
-
+// import article
 import ArticleHome from './pages/ArticleHome'
 import ArticleAltruisme from './pages/ArticleAltruisme'
 import ArticleHeatwave from './pages/ArticleHeatwave'
@@ -16,19 +16,22 @@ import ArticleSelingkuh from './pages/ArticleSelingkuh'
 import ArticleStalk from './pages/ArticleStalk'
 import ArticleStress from './pages/ArticleStress'
 import ArticleVita from './pages/ArticleVita'
-
+// import page and components
 import PaymentDoctor from './pages/PaymentDoctor.jsx'
 import PaymentPage from './pages/PaymentPage'
 import Login from './pages/login'
 import Register from './pages/Register'
-
-
+import ListDoctor from "./pages/ListDoctor.jsx";
+import Layout from "./components/Layout.jsx";
+import PaymentDoctor from "./pages/PaymentDoctor.jsx";
+import PaymentPage from "./pages/PaymentPage";
+import Landing from "./components/Landing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* Ini Layout biar tetep ada di semua halaman. Misalnya Navbar, Footer Bisa di taroh sini */}
-      <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
+      <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
 
@@ -44,10 +47,9 @@ const router = createBrowserRouter(
         <Route path="/articlealtruisme" element={<ArticleAltruisme />}/>
 
         {/* <Route path="/article" element={<About />} /> */}
+        <Route path="/" element={<Landing />} />
         <Route path="/paymentdoctor" element={<PaymentPage />} />
         <Route path="/listdoctor" element={<ListDoctor />} />
-        
-
 
       </Route>
 
@@ -55,11 +57,11 @@ const router = createBrowserRouter(
       <Route path="/regis" element={<Register/>} />
     </>
   )
-)
+);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
