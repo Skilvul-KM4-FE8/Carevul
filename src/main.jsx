@@ -5,6 +5,12 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import ErrorPage from './pages/ErrorPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './components/Layout.jsx'
+
+import PaymentPage from './pages/PaymentPage'
+import PaymentProvider from './context/paymentContext'
+import BookingPage from './pages/BookingPage'
+import Consult from './pages/Consult'
+
 // import article
 import ArticleHome from './pages/ArticleHome'
 import ArticleAltruisme from './pages/ArticleAltruisme'
@@ -17,20 +23,20 @@ import ArticleStalk from './pages/ArticleStalk'
 import ArticleStress from './pages/ArticleStress'
 import ArticleVita from './pages/ArticleVita'
 // import page and components
-import PaymentDoctor from './pages/PaymentDoctor.jsx'
-import PaymentPage from './pages/PaymentPage'
+
 import Login from './pages/login'
 import Register from './pages/Register'
 import ListDoctor from "./pages/ListDoctor.jsx";
 import Layout from "./components/Layout.jsx";
-import PaymentDoctor from "./pages/PaymentDoctor.jsx";
-import PaymentPage from "./pages/PaymentPage";
+
 import Landing from "./components/Landing";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* Ini Layout biar tetep ada di semua halaman. Misalnya Navbar, Footer Bisa di taroh sini */}
+
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
@@ -48,8 +54,15 @@ const router = createBrowserRouter(
 
         {/* <Route path="/article" element={<About />} /> */}
         <Route path="/" element={<Landing />} />
-        <Route path="/paymentdoctor" element={<PaymentPage />} />
+        {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        {/* <Route path="/article" element={<About />} /> */}
         <Route path="/listdoctor" element={<ListDoctor />} />
+        <Route path="/paymentdoctor/:id" element={<PaymentPage />} />
+        <Route path="/bookingpage" element={<BookingPage />} />
+        <Route path="/consult" element={<Consult />} >
+                
+        </Route>
 
       </Route>
 
@@ -61,7 +74,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <PaymentProvider>
+      {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
+      <RouterProvider router={router} />
+    </PaymentProvider>
+  </React.StrictMode>,
 );
+
