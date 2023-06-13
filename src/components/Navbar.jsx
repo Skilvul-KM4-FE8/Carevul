@@ -31,7 +31,7 @@ function BasicExample() {
               Menu klen
             </NavLink>
           </Nav>
-          <Nav className="ms-auto gap-3">
+          <Nav className="ms-auto gap-1">
             <NavLink
               to={"/login"}
               className="logindong btn text-carevul border-carevul"
