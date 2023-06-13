@@ -31,6 +31,8 @@ import Layout from "./components/Layout.jsx";
 import Landing from "./components/Landing";
 import ConsultRoom from "./pages/ConsultRoom";
 import CategoryDoctor from "./pages/CategoryDoctor";
+import LoginDoctor from "./pages/LoginDoctor";
+import RegisterDoctor from "./pages/RegisterDoctor";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -68,6 +70,9 @@ const router = createBrowserRouter(
 
       <Route path="/login" element={<Login />} />
       <Route path="/regis" element={<Register />} />
+
+      <Route path="/logindoctor" element={<LoginDoctor/>} />
+      <Route path="/regisdoctor" element={<RegisterDoctor/>} />
     </>
   )
 );

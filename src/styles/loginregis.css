@@ -10,6 +10,9 @@
   input[type="password"]::placeholder {
     color: #bcbcbc;
   }
+  select{
+    color: #bcbcbc;
+  }
   
   .login {
     height: 100vh;
@@ -95,6 +98,25 @@
     border: 2px solid #296fde;
     border-radius: 8.91238px;
   }
+
+  .login-form select {
+    height: 45px;
+    font-size: 15px;
+    color: #5f6d7e;
+    border: 2px solid #296fde;
+    border-radius: 8.91238px;
+  }
+  
+  select option {
+    height: 45px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #5f6d7e;
+    background: #ffffff;
+  }
+
   
   .login-form .mrgn-1 {
     margin-top: 10px;
