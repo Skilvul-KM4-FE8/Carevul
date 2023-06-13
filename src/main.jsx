@@ -22,6 +22,8 @@ import ArticleSelingkuh from './pages/ArticleSelingkuh'
 import ArticleStalk from './pages/ArticleStalk'
 import ArticleStress from './pages/ArticleStress'
 import ArticleVita from './pages/ArticleVita'
+// import bmi
+import BmiCalculator from './pages/BmiCalculator'
 // import page and components
 
 import Login from './pages/login'
@@ -51,6 +53,7 @@ const router = createBrowserRouter(
         <Route path="/articlekeluarga" element={<ArticleKeluarga />}/>
         <Route path="/articlestalk" element={<ArticleStalk />}/>
         <Route path="/articlealtruisme" element={<ArticleAltruisme />}/>
+        <Route path="/bmicalculator" element={<BmiCalculator />}/>
 
         {/* <Route path="/article" element={<About />} /> */}
         <Route path="/" element={<Landing />} />
@@ -61,6 +64,7 @@ const router = createBrowserRouter(
         <Route path="/paymentdoctor/:id" element={<PaymentPage />} />
         <Route path="/bookingpage" element={<BookingPage />} />
         <Route path="/consult" element={<Consult />} >
+        
                 
         </Route>
 
