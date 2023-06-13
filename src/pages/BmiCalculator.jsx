@@ -51,15 +51,16 @@ function BmiCalculator() {
   return (
     <div className="app">
       <div className="container-bmi">
-        <h2></h2>
-        <form onSubmit={calculatebmi}>
+        <h3 id="title-bmi">Kalkulator BMI</h3>
+        <p id="desc-bmi">Untuk menghitung BMI, masukkan tinggi badan<br></br> dan berat badan kamu yuk!</p>
+        <form onSubmit={calculatebmi} id="form-bmi">
           <div>
             <label>Berat Badan (Kg)</label>
-            <input value={weight} onChange={(e) => setWeight(e.target.value)} />
+            <input value={weight} onChange={(e) => setWeight(e.target.value)} className="form-control" placeholder="Masukkan Berat badan"/>
           </div>
           <div>
             <label>Tinggi Badan (Cm)</label>
-            <input value={height} onChange={(e) => setHeight(e.target.value)} />
+            <input value={height} onChange={(e) => setHeight(e.target.value)} className="form-control" placeholder="Masukkan Tinggi badan"/>
           </div>
           <button className="btn-bmi" type="submit">
             Hitung BMI
@@ -69,9 +70,9 @@ function BmiCalculator() {
           </button>
         </form>
         <div className="center">
-          <h3 className="center">
+          <h3 className="center" id="result">
             BMI Kamu : {bmi}
-            <p className="center">{message}</p>
+            <p className="center" id="message">{message}</p>
           </h3>
         </div>
         <div className="img-container-bmi">
