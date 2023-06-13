@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./../styles/loginregis.css"
 import loginLogo from './../assets/login.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { PaymentContext } from '../context/paymentContext';
 
 function Login() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+
+  const { payment, setPayment } = useContext(PaymentContext);
+  const navigate = useNavigate();
   
   const handleLogin=async(e)=>{
     e.preventDefault()
@@ -23,10 +27,26 @@ function Login() {
       }
 
       if (result < 1) {
-    alert("Gagal Login")
+        alert("Gagal Login")
       } else {
-    alert("Berhasil Login")
-    localStorage.setItem("idUser", result[0].id)
+        alert("Berhasil Login")
+        const loginData = {
+          email: result[0].email,
+          name: result[0].name,
+          id: result[0].id,
+          img: result[0].image,
+        }
+        const loginDataJson = JSON.stringify(loginData)
+        localStorage.setItem("idUser", loginDataJson)
+        
+        // if payment context have a data, then redirect to booking page
+        if (payment) {
+          navigate("/bookingpage")
+        } else {
+          navigate("/")
+        }
+        // else redirect to home page
+    
       }
     };
     ambilData();

@@ -19,6 +19,10 @@ const PaymentPage = () => {
     const navigate = useNavigate();
     const param = useParams();
 
+    // localStorage.setItem("idUser", result[0].id)
+    const loginUser = JSON.parse(localStorage.getItem("idUser"));
+    console.log(loginUser)
+
     console.log(param.id)
 
     useEffect(() => {
@@ -37,13 +41,13 @@ const PaymentPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const idBooking = Math.random();
+        // const idBooking = Math.random();
         // console.log(radioVal)
         setPayment({
-            idUser: "iduser",
+            idUser: loginUser.id,
             idDoctor: param.id,
             // bookingId: idBooking,
-            price: doctor.totalPatient,
+            price: 20000,
             paymentMethod: radioVal,
         });
         // console.log(payment)
