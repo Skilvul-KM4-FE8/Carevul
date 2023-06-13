@@ -6,6 +6,11 @@ import "../styles/Landing.css";
 import Pict1 from "../assets/pict1.png";
 import Pict2 from "../assets/pict2.png";
 import { Col, Container, Row } from "react-bootstrap";
+import fb from "../assets/icon/icons8-facebook.svg";
+import ins from "../assets/icon/icons8-instagram.svg";
+import lin from "../assets/icon/icons8-linked-in.svg";
+import twi from "../assets/icon/icons8-twitter.svg";
+import yt from "../assets/icon/icons8-youtube.svg";
 
 const Landing = () => {
   return (
