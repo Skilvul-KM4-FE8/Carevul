@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import noConsult from './../assets/no_booked_doctor.svg'
 
 const ConsultRoom = () => {
@@ -16,7 +17,7 @@ const ConsultRoom = () => {
                 </div>
                 <div className="row justify-content-md-center mt-2">
                     <div className="col-md-4 d-flex">
-                        <a href="./../kategori_dokter/index.html" className="btn color-carevul-gradient flex-fill text-white px-5 py-2">Mulai Konsultasi</a>
+                        <Link to="/consult/category" className="btn color-carevul-gradient flex-fill text-white px-5 py-2">Mulai Konsultasi</Link>
                     </div>
                 </div>
             </section>

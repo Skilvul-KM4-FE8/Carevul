@@ -14,7 +14,7 @@ const Consult = () => {
                     <div className="col-md-1">
                         <h3 className="text-light-gray">|</h3>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-7">
                         <Link to="/consult/chatroom" className="fw-bold text-decoration-none"><h4 className="text-carevul text-decoration-none">Ruang Konsultasi</h4></Link>
                     <p className="lead text-secondary"><small> Pilih dokter yang sesuai dengan kebutuhan kamu yuk!</small></p>
                 </div>
