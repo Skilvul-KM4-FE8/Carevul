@@ -7,6 +7,27 @@ function BmiCalculator(){
     const [bmi, setBmi]=useState('');
     const [message, setMessage]=useState('');
     
+    let imgsrc;
+    let calculatebmi = (event) => {
+        event.preventDefault();
+        if(weight === 0 || height === 0){
+            alert("invalid input");
+        }
+        else {
+            let bmi=(weight / (height / 100) ** 2)
+            setBmi(bmi.toFixed(2))
+
+            if(bmi<18.5){
+                setMessage("Berat badanmu masih dibawah rata-rata")
+            }else if(bmi>=18.5 && bmi<24.9){
+                setMessage("Berat badanmu normal!")
+            }else{
+                setMessage("Kamu kelebihan berat badan")
+            }
+        }
+    }
+
+
     return (
         <div className="app">
             <div className="container">
@@ -29,7 +50,7 @@ function BmiCalculator(){
                     </h3>
                 </div>
                 <div className="img-container">
-                    <img src={imgbmi} alt=""></img>
+                    <img src={imgsrc} alt=""></img>
                 </div>
             </div>
         </div>
