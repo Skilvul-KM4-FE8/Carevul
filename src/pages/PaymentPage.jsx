@@ -49,7 +49,7 @@ const PaymentPage = () => {
             // bookingId: idBooking,
             price: 20000,
             paymentMethod: radioVal,
-        });
+        }); 
         // console.log(payment)
         navigate("/bookingpage");
     };

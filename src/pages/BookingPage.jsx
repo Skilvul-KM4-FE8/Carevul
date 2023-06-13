@@ -60,9 +60,25 @@ const BookingPage = () => {
             },
             body: JSON.stringify(payment)
         })
-        .then(alert('Booking berhasil dilakukan'))
-        .then(setPayment(false))
         .catch(err => console.log(err))
+
+        // create chat room
+        fetch(`https://sk-chat-api.vercel.app/api/room`, {
+            method: 'POST',
+            headers: {
+                'Accept': '*/*',
+                "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+            },
+            body: JSON.stringify({
+                "userId": payment.idUser,
+                "doctorId": payment.idDoctor
+                }
+            )
+        })
+        .then(res => res.json())
+        .then(alert('Booking berhasil dilakukan'))
+        .then(setPayment(false) )
+        .then(navigate('/consult/chatroom'))
 
         // clear payment
         setPayment(false)
