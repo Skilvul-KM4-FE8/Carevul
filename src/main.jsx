@@ -11,16 +11,19 @@ import BookingPage from "./pages/BookingPage";
 import Consult from "./pages/Consult";
 
 // import article
-import ArticleHome from "./pages/ArticleHome";
-import ArticleAltruisme from "./pages/ArticleAltruisme";
-import ArticleHeatwave from "./pages/ArticleHeatwave";
-import ArticleCascara from "./pages/ArticleCascara";
-import ArticleKeluarga from "./pages/ArticleKeluarga";
-import ArticleMood from "./pages/ArticleMood";
-import ArticleSelingkuh from "./pages/ArticleSelingkuh";
-import ArticleStalk from "./pages/ArticleStalk";
-import ArticleStress from "./pages/ArticleStress";
-import ArticleVita from "./pages/ArticleVita";
+import ArticleHome from './pages/ArticleHome'
+import ArticleAltruisme from './pages/ArticleAltruisme'
+import ArticleHeatwave from './pages/ArticleHeatwave'
+import ArticleCascara from './pages/ArticleCascara'
+import ArticleKeluarga from './pages/ArticleKeluarga'
+import ArticleMood from './pages/ArticleMood'
+import ArticleSelingkuh from './pages/ArticleSelingkuh'
+import ArticleStalk from './pages/ArticleStalk'
+import ArticleStress from './pages/ArticleStress'
+import ArticleVita from './pages/ArticleVita'
+// import bmi
+import BmiCalculator from './pages/BmiCalculator'
+
 // import page and components
 
 import Login from "./pages/login";
@@ -43,16 +46,17 @@ const router = createBrowserRouter(
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
 
-        <Route path="/articlehome" element={<ArticleHome />} />
-        <Route path="/articlevita" element={<ArticleVita />} />
-        <Route path="/articlecascara" element={<ArticleCascara />} />
-        <Route path="/articleheatwave" element={<ArticleHeatwave />} />
-        <Route path="/articleselingkuh" element={<ArticleSelingkuh />} />
-        <Route path="/articlemood" element={<ArticleMood />} />
-        <Route path="/articlestress" element={<ArticleStress />} />
-        <Route path="/articlekeluarga" element={<ArticleKeluarga />} />
-        <Route path="/articlestalk" element={<ArticleStalk />} />
-        <Route path="/articlealtruisme" element={<ArticleAltruisme />} />
+        <Route path="/articlehome" element={<ArticleHome />}/>
+        <Route path="/articlevita" element={<ArticleVita />}/>
+        <Route path="/articlecascara" element={<ArticleCascara />}/>
+        <Route path="/articleheatwave" element={<ArticleHeatwave />}/>
+        <Route path="/articleselingkuh" element={<ArticleSelingkuh />}/>
+        <Route path="/articlemood" element={<ArticleMood />}/>
+        <Route path="/articlestress" element={<ArticleStress />}/>
+        <Route path="/articlekeluarga" element={<ArticleKeluarga />}/>
+        <Route path="/articlestalk" element={<ArticleStalk />}/>
+        <Route path="/articlealtruisme" element={<ArticleAltruisme />}/>
+        <Route path="/bmicalculator" element={<BmiCalculator />}/>
 
         {/* <Route path="/article" element={<About />} /> */}
         <Route path="/" element={<Landing />} />
@@ -62,6 +66,7 @@ const router = createBrowserRouter(
         <Route path="/listdoctor" element={<ListDoctor />} />
         <Route path="/paymentdoctor/:id" element={<PaymentPage />} />
         <Route path="/bookingpage" element={<BookingPage />} />
+
         <Route path="/consult" element={<Consult />}>
           <Route path="/consult/chatroom" element={<ConsultRoom />} />
           <Route path="/consult/category" element={<CategoryDoctor />} />
