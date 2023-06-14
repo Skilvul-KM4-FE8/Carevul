@@ -1,6 +1,11 @@
 import carevulLogo from "../assets/carevul-logo.svg";
 import "../styles/footer.css";
 import { Link } from "react-router-dom";
+import fb from "../assets/icon/icons8-facebook.svg";
+import ins from "../assets/icon/icons8-instagram.svg";
+import lin from "../assets/icon/icons8-linked-in.svg";
+import twi from "../assets/icon/icons8-twitter.svg";
+import yt from "../assets/icon/icons8-youtube.svg";
 
 const footer = () => {
   return (
@@ -8,23 +13,24 @@ const footer = () => {
       <di className="bg-color-footer mt-5 stroke-card-border shadow-sm">
         <div className="container py-5 ">
           <div className="row d-flex justify-content-between">
-            <div className="col-md-5 col-6 mt-3 ">
+            <div className="col-mb-5 col-6 mt-3 ">
               <img src={carevulLogo} alt="" />
               <p className="text-gray">
                 <h6>
                   Kamu lagi sakit?
-                  <span className="text-carevul">Carevul </span> solusinya,
+                  <span className="text-carevul">&nbsp;Carevul </span>{" "}
+                  solusinya,
                   <br />
                   tanpa antri, tanpa ribet, konsulin aja!
                 </h6>
               </p>
 
               <div className="social-media d-flex justify-content-between">
-                <i className="fa-brands fa-facebook"></i>
-                <i className="fa-brands fa-square-instagram"></i>
-                <i className="fa-brands fa-linkedin"></i>
-                <i className="fa-brands fa-square-twitter"></i>
-                <i className="fa-brands fa-youtube"></i>
+                <img src={fb} alt="" />
+                <img src={ins} alt="" />
+                <img src={twi} alt="" />
+                <img src={lin} alt="" />
+                <img src={yt} alt="" />
               </div>
             </div>
 

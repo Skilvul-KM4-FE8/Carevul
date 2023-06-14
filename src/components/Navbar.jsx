@@ -8,7 +8,6 @@ import "./../styles/Navbar.css";
 
 function BasicExample() {
   return (
-
     <Navbar bg="light" expand="lg">
       <Container className="mx-auto">
         <Navbar.Brand href="#">
@@ -35,12 +34,11 @@ function BasicExample() {
             <NavLink to={"/bmicalculator"} className="nav-link ">
               Kalkulator BMI
             </NavLink>
-
           </Nav>
-          <Nav className="ms-auto gap-3">
+          <Nav className="ms-auto gap-1">
             <NavLink
               to={"/login"}
-              className="login-dong btn text-carevul border-carevul"
+              className="logindong btn text-carevul border-carevul"
             >
               Login
             </NavLink>

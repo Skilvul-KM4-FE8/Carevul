@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import PaymentPage from "./pages/PaymentPage";
-import PaymentProvider from "./context/paymentContext";
-import BookingPage from "./pages/BookingPage";
-import Consult from "./pages/Consult";
 
 // import article
 import ArticleHome from './pages/ArticleHome'
@@ -21,6 +18,7 @@ import ArticleSelingkuh from './pages/ArticleSelingkuh'
 import ArticleStalk from './pages/ArticleStalk'
 import ArticleStress from './pages/ArticleStress'
 import ArticleVita from './pages/ArticleVita'
+
 // import bmi
 import BmiCalculator from './pages/BmiCalculator'
 
@@ -31,11 +29,19 @@ import Register from "./pages/Register";
 import ListDoctor from "./pages/ListDoctor.jsx";
 import Layout from "./components/Layout.jsx";
 
+// impoort outlet
 import Landing from "./components/Landing";
 import ConsultRoom from "./pages/ConsultRoom";
 import CategoryDoctor from "./pages/CategoryDoctor";
 import LoginDoctor from "./pages/LoginDoctor";
 import RegisterDoctor from "./pages/RegisterDoctor";
+
+// import payment
+import PaymentPage from "./pages/PaymentPage";
+import PaymentProvider from "./context/paymentContext";
+import BookingPage from "./pages/BookingPage";
+import Consult from "./pages/Consult";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,9 +49,9 @@ const router = createBrowserRouter(
       {/* Ini Layout biar tetep ada di semua halaman. Misalnya Navbar, Footer Bisa di taroh sini */}
 
       <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
+        <Route path="/" element={<Landing />} />
         {/* Di bawah sini bisa di taroh tiap halaman yang kalian buat Contohnya :  */}
         {/* <Route path="/home" element={<Home />} /> */}
-
         <Route path="/articlehome" element={<ArticleHome />}/>
         <Route path="/articlevita" element={<ArticleVita />}/>
         <Route path="/articlecascara" element={<ArticleCascara />}/>
@@ -71,11 +77,11 @@ const router = createBrowserRouter(
           <Route path="/consult/chatroom" element={<ConsultRoom />} />
           <Route path="/consult/category" element={<CategoryDoctor />} />
         </Route>
+
       </Route>
 
       <Route path="/login" element={<Login />} />
       <Route path="/regis" element={<Register />} />
-
       <Route path="/logindoctor" element={<LoginDoctor/>} />
       <Route path="/regisdoctor" element={<RegisterDoctor/>} />
     </>

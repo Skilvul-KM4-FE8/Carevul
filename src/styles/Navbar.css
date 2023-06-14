@@ -5,12 +5,11 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-
-.login-dong {
+.logindong {
   border: 1px solid !important;
 }
 
-.login-dong:hover {
+.logindong:hover {
   background-image: linear-gradient(150deg, #3a8ef6, #7c1add) !important;
   color: white !important;
 }
