@@ -15,10 +15,7 @@ const BookingPage = () => {
     // For get data login from localstorage
     const loginData = JSON.parse(localStorage.getItem("idUser"))
 
-    // validate if payment context have a data
-    if (!payment) {
-        navigate("/listdoctor")
-    }
+    
 
     console.log(fullName)
     console.log(complaint)
@@ -80,11 +77,16 @@ const BookingPage = () => {
         })
         .then(res => res.json())
         .then(alert('Booking berhasil dilakukan'))
-        .then(setPayment(false) )
         .then(navigate('/consult/chatroom'))
+
 
         // clear payment
         setPayment(false)
+
+        // validate if payment context have a data
+        if (!payment) {
+        navigate("/listdoctor")
+    }
 
         // // show allert for success
         // alert('Booking berhasil dilakukan')
