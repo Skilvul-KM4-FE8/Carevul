@@ -1,12 +1,24 @@
 import { useContext, useEffect, useState } from 'react'
 import './../styles/bookingpage.css'
 import { PaymentContext } from '../context/paymentContext'
+import { Button, Modal } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const BookingPage = () => {
     const [fullName, setFullName] = useState('')
     const [complaint, setComplaint] = useState('')
 
     const {payment, setPayment} = useContext(PaymentContext)
+
+    const navigate = useNavigate()
+
+    // For get data login from localstorage
+    const loginData = JSON.parse(localStorage.getItem("idUser"))
+
+    // validate if payment context have a data
+    if (!payment) {
+        navigate("/listdoctor")
+    }
 
     console.log(fullName)
     console.log(complaint)
@@ -48,8 +60,25 @@ const BookingPage = () => {
             },
             body: JSON.stringify(payment)
         })
-        .then(alert('Booking berhasil dilakukan'))
         .catch(err => console.log(err))
+
+        // create chat room
+        fetch(`https://sk-chat-api.vercel.app/api/room`, {
+            method: 'POST',
+            headers: {
+                'Accept': '*/*',
+                "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+            },
+            body: JSON.stringify({
+                "userId": payment.idUser,
+                "doctorId": payment.idDoctor
+                }
+            )
+        })
+        .then(res => res.json())
+        .then(alert('Booking berhasil dilakukan'))
+        .then(setPayment(false) )
+        .then(navigate('/consult/chatroom'))
 
         // clear payment
         setPayment(false)
@@ -59,6 +88,11 @@ const BookingPage = () => {
         
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     useEffect(() => {
         console.log(payment)
     }, [payment])
@@ -66,6 +100,25 @@ const BookingPage = () => {
 
     return (
         <>
+            {/* For Modals if not logged in */}
+            
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                <Modal.Title>Silahkan Login Terlebih Dahulu</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Kamu belum melakukan Login, silahkan login terlebih dahulu untuk melakukan booking dokter !</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Tutup
+                </Button>
+                <Button variant="primary" onClick={() => navigate('/login')}>
+                    Ke Login Page
+                </Button>
+                </Modal.Footer>
+            </Modal>
+            {/* End of Modals */}
+
             <div className="container mt-5">
                 <div className="row justify-content-md-center">
                     <div className="col-md-7 text-center">
@@ -94,7 +147,14 @@ const BookingPage = () => {
                                     <div className="text-center mt-4">
                                         <p className="fw-light text-carevul"> Harap memasuki roomchat konsultasi pada jadwal yang di tentukan</p>
 
-                                        <button id="btn-confirm" className="btn color-carevul-gradient text-white" type="submit" name="confirm">Konfirmasi</button>
+                                        {
+                                            (loginData) ?
+                                                <button id="btn-confirm" className="btn color-carevul-gradient text-white" type="submit" name="confirm">Konfirmasi</button>
+                                            :
+                                            <div className='btn color-carevul-gradient text-black' onClick={handleShow}>
+                                                Konfirmasi
+                                            </div>
+                                        }
                                     </div>
                                 </form>
                             </div>

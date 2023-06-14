@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import "./../styles/loginregis.css";
 import regisLogo from "./../assets/register.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-function Register() {
+function RegisterDoctor() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [kategori, setKategori] = useState("");
+  const [instansi, setInstansi] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    let res = await axios.get("https://6454b891f803f345762f6469.mockapi.io/users");
+    let res = await axios.get("https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor");
     let data = await res.data;
 
     const ambilData = () => {
@@ -26,11 +28,12 @@ function Register() {
 
       if (result < 1) {
         axios
-          .post("https://6454b891f803f345762f6469.mockapi.io/users", {
+          .post("https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor", {
             name: name,
             email: email,
             password: password,
-            image: "https://img.icons8.com/?size=512&id=tZuAOUGm9AuS&format=png",
+            kategori: kategori,
+            instansi: instansi,
           })
           .then((result) => {
             new Swal(
@@ -40,7 +43,7 @@ function Register() {
               {
                 timer: 3000,
               },
-              navigate("/login")
+              navigate("/logindoctor")
             );
           })
           .catch((error) => {
@@ -62,8 +65,8 @@ function Register() {
           <div className="row justify-content-center align-items-center h-100">
             <div className="col-7">
               <div className="header">
-                <h1>Daftar dulu yuk</h1>
-                <p>Gratis konsultasi di Carevul dimanapun dan kapanpun</p>
+                <h1>Daftar dulu yuk, Dok</h1>
+                <p>Silahkan melakukan pendaftaran terlebih dahulu</p>
               </div>
               <div className="login-form">
                 <form id="form-register" onSubmit={handleRegister}>
@@ -103,13 +106,50 @@ function Register() {
                     placeholder="Masukkan Password"
                   />
 
+                  <label htmlFor="category" className="form-label mrgn-1">
+                    Kategori
+                  </label>
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    name="category"
+                    id="category"
+                    value={kategori}
+                    onChange={(e) => setKategori(e.target.value)}
+                  >
+                    <option defaultValue={""}>Pilih Kategori</option>
+                    <option value="umum">Dokter Umum</option>
+                    <option value="anak">Dokter Anak</option>
+                    <option value="kulit_kelamin">Dokter Kulit & Kelamin</option>
+                    <option value="gigi">Dokter Gigi</option>
+                    <option value="kandungan">Dokter Kandungan</option>
+                    <option value="tht">Dokter THT</option>
+                    <option value="psikiater">Dokter Psikiater</option>
+                    <option value="saraf">Dokter Saraf</option>
+                    <option value="penyakit_dalam">Dokter Penyakit Dalam</option>
+                    <option value="mata">Dokter Mata</option>
+                    <option value="tulang">Dokter Tulang</option>
+                  </select>
+
+                  <label htmlFor="instansi" className="form-label mrgn-1">
+                    Instansi
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="instansi"
+                    value={instansi}
+                    onChange={(e) => setInstansi(e.target.value)}
+                    placeholder="Masukkan Instansi"
+                  />
+
                   <button className="btn-regis" type="submit">
                     Daftar
                   </button>
                 </form>
                 <p className="fsize-15 d-block text-center">
                   Sudah punya akun?
-                  <Link to={"/login"} style={{ textDecoration: "none" }}>
+                  <Link to={"/logindoctor"} style={{ textDecoration: "none" }}>
                     <span className="regis">Silahkan Login</span>
                   </Link>
                 </p>
@@ -127,4 +167,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegisterDoctor;

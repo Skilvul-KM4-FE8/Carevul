@@ -1,0 +1,139 @@
+import { Link } from 'react-router-dom'
+import noConsult from './../assets/no_booked_doctor.svg'
+import { Col, Container, Row } from 'react-bootstrap'
+import { Avatar, ChatItem, Input, MessageBox, Navbar } from 'react-chat-elements'
+import ChatItemList from './ChatItemList'
+
+import './../styles/chatroom.css'
+
+import "react-chat-elements/dist/main.css"
+import RoomChat from './RoomChat'
+import { useEffect, useState } from 'react'
+
+const ConsultRoom = () => {
+
+    const [bookedDoctors, setBookedDoctors] = useState(false)
+
+    // get data logged user from localstorage
+    const loggedUser = JSON.parse(localStorage.getItem("idUser"))
+    console.log(loggedUser.id)
+
+    useEffect(() => {
+        // fetch booked data from api
+        fetch(`https://64506b72a3221969114a2d25.mockapi.io/booking?idUser=${loggedUser.id}`)
+            .then((response) => response.json())
+            .then(data => setBookedDoctors(data))
+            .catch((err) => console.log(err))
+    }, [])
+
+   console.log(bookedDoctors)
+
+    return (
+        <>
+            {/* Section if no booked doctor here */}
+                <section id="doctors-list">
+
+                    {/* Section no doctor */}
+                        <div className="row justify-content-md-center ">
+                            <div className="col-md-7 text-center">
+                                <p className="text-light-gray fw-light">
+                                    Silahkan berkonsultasi dengan dokter, ceritakan apa yang kamu rasakan kepada dokter agar dokter dapat memberi solusi buat kamu ya!
+                                </p>
+                            </div>
+                            <div className="col-md-6 d-flex justify-content-center">
+                                    <img src={noConsult} />
+                            </div>
+                        </div>
+                        <div className="row justify-content-md-center mt-2">
+                            <div className="col-md-4 d-flex">
+                                <Link to="/consult/category" className="btn color-carevul-gradient flex-fill text-white px-5 py-2">Mulai Konsultasi</Link>
+                            </div>
+                        </div>
+                    {/* end section no doctor */}
+
+                    {/* section if ada data dokter lah */}
+                    {
+                        bookedDoctors && bookedDoctors.map(doctor => (
+                                <Row key={doctor.id}>
+                                <Col>
+                                    {/* <div className="shadow-sm"> */}
+                                    <Container className="shadow py-3 px-5 rounded">
+                                    <Row>
+                                        <Col className="d-flex justify-content-center align-items-center">
+                                        <img src={doctor.avatar} alt="doctor" className="rounded-circle" />
+                                        </Col>
+                                        <Col className="text-start mb-3" md={7} >
+                                        <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">dr. {doctor.name} </h4>
+                                        <p className=" doctor-name">Dokter {doctor.category}<br /> {doctor.hospital}</p>
+                                        {/* <h5 className=" doctor-name">  <span className="text-carevul ">1 Pasien</span>   telah buat janji dengan dokter ini</h5> */}
+                                        <h5 className=" doctor-name">  <span className="text-carevul ">Rp. {doctor.totalPatient}</span></h5>
+                                        </Col>
+                                        <Col className="d-flex justify-content-center align-items-center">
+                                        <button onClick={() => navigate(`../chatroom/${doctor.id}`)} className="btn text-white fw-bold color-carevul-gradient px-5 py-2 shadow-sm">Chat Dokter</button>
+                                        </Col>
+                                    </Row>
+                                    </Container>
+                                    {/* </div> */}
+                                </Col>
+                                </Row>
+                        ))
+                    }
+                    {/* end section ada data dokter */}
+
+
+                </section>
+            {/* end of this section */}
+
+            {/* Section for chat */}
+                <section id="chat">
+                    <Container className='border'>
+                        <Row>
+                            <div className="col-4">
+                                <section id="chatListRoom">
+                                    <Container>
+                                        <Row>
+                                                <ChatItemList 
+                                                    avatar='https://avatars.githubusercontent.com/u/80540635?v=4'
+                                                    alt='Reactjs'
+                                                    title='Reactjs'
+                                                    subtitle='What are you doing?'
+                                                    date={new Date()}
+                                                    unread={0}
+                                                    id={"test"}
+                                                />
+                                        </Row>
+                                        <Row>
+                                                <ChatItemList 
+                                                    avatar='https://avatars.githubusercontent.com/u/80540635?v=4'
+                                                    alt='Reactjs'
+                                                    title='Reactjs'
+                                                    subtitle='What are you doing?'
+                                                    date={new Date()}
+                                                    unread={0}
+                                                    id={"test"}
+                                                />
+                                        </Row>
+                                    </Container>
+                                </section>
+                            </div>
+                            <div className="col-8">
+                                {/* Section room chat */}
+                                <section id="roomchat">
+                                    <RoomChat />
+                                </section>
+                                {/* end section room chat */}
+                            <div className="col">
+                            <form className='d-flex justify-content-between'>
+                                <input placeholder="Type here..." type='text' /> <button className='btn color-carevul-gradient'>Send</button>
+                            </form>
+                            </div>
+                            </div>
+                        </Row>
+                    </Container>
+                </section>
+            {/* End of Section for chat */}
+        </>
+    )
+}
+
+export default ConsultRoom
