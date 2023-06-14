@@ -197,11 +197,11 @@ footer li {
   padding: 10px 0 30px 0;
 }
 
-.row {
+/* .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
-}
+} */
 
 .flex-column {
   flex-direction: column;

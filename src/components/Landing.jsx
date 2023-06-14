@@ -1,11 +1,10 @@
-import CharacterBanner from "../assets/CharacterBanner.svg";
 import Doctor from "../assets/medical-doctor.png";
 import History from "../assets/medical-history.png";
 import Online from "../assets/medical-online.png";
 import "../styles/Landing.css";
 import Pict1 from "../assets/pict1.png";
 import Pict2 from "../assets/pict2.png";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 const Landing = () => {
   return (
@@ -36,15 +35,15 @@ const Landing = () => {
       {/*  */}
 
       <section className="service">
-        <div className="a-container">
+        <div className="">
           <h1 className="a-text d-flex">Pelayanan kami</h1>
           <h6 className="text-center">
             Beberapa pelayanan kami yang bisa kamu dapatkan sesuai dengan
             kebutuhanmu nih Carefriends!
           </h6>
-          <Container>
-            <Row>
-              <Col>
+          <div className="container-fluid">
+            <Row className="gap-4 justify-content-center">
+              <div className="col-md-3 m-md-4 ">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Online} alt="" />
@@ -54,8 +53,8 @@ const Landing = () => {
                     </h6>
                   </div>
                 </div>
-              </Col>
-              <Col>
+              </div>
+              <div className="col-md-3 m-md-4">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={History} alt="" />
@@ -65,8 +64,8 @@ const Landing = () => {
                     </h6>
                   </div>
                 </div>
-              </Col>
-              <Col>
+              </div>
+              <div className="col-md-3 m-md-4">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Doctor} alt="" />
@@ -76,9 +75,9 @@ const Landing = () => {
                     </h6>
                   </div>
                 </div>
-              </Col>
+              </div>
             </Row>
-          </Container>
+          </div>
         </div>
 
         <section className="introduction">
