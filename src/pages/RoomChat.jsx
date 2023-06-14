@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 const RoomChat = () => {
     const {roomChat, setRoomChat} = useContext(RoomChatContext)
 
+    const [chatData, setChatData] = useState([])
     const [inputChat, setInputChat] = useState('')
 
     const navigate = useNavigate()
@@ -33,17 +34,23 @@ const RoomChat = () => {
         //     userId: loggedUser.id,
         //     message: inputChat
         // })
-        fetch(`http://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}/chat`, {
-            method: 'POST',
-            headers: {
-                'Accept': '*/*',
-                "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                userId: loggedUser.id,
-                message: inputChat
-            })
+        // fetch(`http://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}/chat`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Accept': '*/*',
+        //         "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         userId: loggedUser.id,
+        //         message: inputChat
+        //     })
+        // })
+        // post data using axios
+        console.log(roomChat)
+        await axios.post(`http://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}/chat`, {
+            userId: loggedUser.id,
+            message: inputChat
         })
         setInputChat('')
         
@@ -52,8 +59,9 @@ const RoomChat = () => {
 
     useEffect(() => {
 
-        fetch(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
+        // fetch(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
         const   getRoomChat = async () => {
+            console.log(roomChat.idRoom)
             let res = await axios.get(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
             // let res = await axios.get(`https://6454b891f803f345762f6469.mockapi.io/users`)
             let result = await res.data
@@ -65,6 +73,18 @@ const RoomChat = () => {
         getRoomChat()
         console.log(roomChat)
     }, [])
+
+    useEffect(() => {
+        const getChat = async () => {
+            let res = await axios.get(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
+            let result = await res.data.chats
+            console.log(res)
+            setChatData(result)
+            // console.log(result)
+        }
+
+        getChat()
+    }, [chatData])
 
     return (
         <>
@@ -81,22 +101,26 @@ const RoomChat = () => {
             />
             <div className="col ">
                 <div id="chatroom-box">
-                <MessageBox
-                    position='left'
-                    title='Burhan'
-                    type='text'
-                    text="Hi there !"
-                    date={new Date()}
-                    replyButton={true}
-                />
-                <MessageBox
+                    {console.log(chatData)}
+                    {chatData.map((item, index) => (
+                        <MessageBox
+                            position='left'
+                            // title={item.message}
+                            type='text'
+                            text={item.message}
+                            date={new Date()}
+                            replyButton={true}
+                        />
+                    ))
+                    }
+                {/* <MessageBox
                     position='right'
                     title='Burhan'
                     type='text'
                     text="Hi there !"
                     date={new Date()}
                     replyButton={true}
-                />
+                /> */}
 
                 </div>
             </div>
