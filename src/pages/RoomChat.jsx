@@ -52,18 +52,18 @@ const RoomChat = () => {
 
     useEffect(() => {
 
-        // fetch(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
-        // const   getRoomChat = async () => {
-        //     // let res = await axios.get(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
-        //     let res = await axios.get(`https://6454b891f803f345762f6469.mockapi.io/users`)
-        //     let result = await res.data
-        //     console.log(res)
-        //     setRoomChat(result)
-        //     console.log(result)
-        // }
+        fetch(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
+        const   getRoomChat = async () => {
+            let res = await axios.get(`https://sk-chat-api.vercel.app/api/room/${roomChat.idRoom}`)
+            // let res = await axios.get(`https://6454b891f803f345762f6469.mockapi.io/users`)
+            let result = await res.data
+            console.log(res)
+            setRoomChat(result)
+            console.log(result)
+        }
 
-        // getRoomChat()
-        // console.log(roomChat)
+        getRoomChat()
+        console.log(roomChat)
     }, [])
 
     return (

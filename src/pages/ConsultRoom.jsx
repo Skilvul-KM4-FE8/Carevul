@@ -13,18 +13,21 @@ import axios from 'axios'
 
 const ConsultRoom = () => {
 
-    const [bookedDoctors, setBookedDoctors] = useState([
-        {
-        "id": 6,
-        "userId": "32",
-        "doctorId": "1"
-        },
-        {
-        "id": 7,
-        "userId": "32",
-        "doctorId": "1"
-        }
-        ])
+    // const [bookedDoctors, setBookedDoctors] = useState([
+    //     {
+    //     "id": 6,
+    //     "userId": "32",
+    //     "doctorId": "1"
+    //     },
+    //     {
+    //     "id": 7,
+    //     "userId": "32",
+    //     "doctorId": "1"
+    //     }
+    //     ])
+
+    const [bookedDoctors, setBookedDoctors] = useState(false)
+
     const [chatList, setChatList] = useState([])
 
     // get data logged user from localstorage
@@ -34,41 +37,31 @@ const ConsultRoom = () => {
     let tempChat = []
 
     useEffect(() => {
-        // fetch booked data from api
-        // fetch(`https://sk-chat-api.vercel.app/api/room?userId=${loggedUser.id}`
-        //     , {
-        //         method: 'GET',
-        //         headers: {
-        //             'Accept': '*/*',
-        //             "User-Agent": "Thunder Client (https://www.thunderclient.com)"
-        //         }
-        //         })
-        //     .then((response) => response.json())
-        //     .then(data => setBookedDoctors(data))
-        //     .then(() => console.log(bookedDoctors))
-        //     .catch((err) => console.log(err))
-
-        // axios.get(`https://sk-chat-api.vercel.app/api/room?userId=${loggedUser.id}`)
-        //     .then((response) => setBookedDoctors(response.data))
-        //     .then(() => console.log(bookedDoctors))
-        //     .catch((err) => console.log(err))
-
-        bookedDoctors.map(async doctor => {
-            console.log(doctor.doctorId)
-            await fetch(`https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor/${doctor.doctorId}`)
-                .then((response) => response.json())
-                .then(async data => {
-                    await tempChat.push({...data, idRoom: doctor.id, idUser : loggedUser.id})
-                    await setChatList(tempChat)
-                    console.log(data)
-                    console.log(chatList) 
-                }
-                )
-                .catch((err) => console.log(err)
-                )
-        })
+        const getBookedDoctors = async () => {
+        await axios.get(`https://sk-chat-api.vercel.app/api/room?userId=${loggedUser.id}`)
+            .then((response) => setBookedDoctors(response.data))
+        console.log(bookedDoctors)
+        }
+        getBookedDoctors()
         
-    }, [])
+        if (bookedDoctors) {
+            console.log(bookedDoctors)
+            bookedDoctors.map( doctor => {
+                console.log(doctor.doctorId)
+                fetch(`https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor/${doctor.doctorId}`)
+                    .then((response) => response.json())
+                    .then(async data => {
+                        await tempChat.push({...data, idRoom: doctor.id, idUser : loggedUser.id})
+                        await setChatList(tempChat)
+                        console.log(data)
+                        console.log(chatList) 
+                    }
+                    )
+                    .catch((err) => console.log(err)
+                    )
+            })
+        }
+        }, [])
     
     console.log(chatList)
     console.log(bookedDoctors)
@@ -94,6 +87,7 @@ const ConsultRoom = () => {
                                 <Link to="/consult/category" className="btn color-carevul-gradient flex-fill text-white px-5 py-2">Mulai Konsultasi</Link>
                             </div>
                         </div>
+
                     {/* end section no doctor */}
 
                     {/* section if ada data dokter lah */}
@@ -136,8 +130,8 @@ const ConsultRoom = () => {
                             <div className="col-4">
                                 <section id="chatListRoom">
                                     <Container>
-                                            <Row>
-                                                {chatList && chatList.map(data => (
+                                            <Row>{console.log(chatList)}
+                                                {chatList.map(data => (
                                                         <ChatItemList key={data.id}
                                                                 avatar={data.image}
                                                                 alt={data.email}
