@@ -44,7 +44,6 @@ const PaymentPage = () => {
         // const idBooking = Math.random();
         // console.log(radioVal)
         setPayment({
-            idUser: loginUser.id,
             idDoctor: param.id,
             // bookingId: idBooking,
             price: 20000,
