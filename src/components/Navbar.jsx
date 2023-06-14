@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import CarevulLogo from "../assets/carevul-logo.svg";
 import "./../styles/Navbar.css";
 
+
 function BasicExample() {
   return (
     <Navbar bg="light" expand="lg">
@@ -27,8 +28,11 @@ function BasicExample() {
             <NavLink to={"/listdoctor"} className="nav-link ">
               List Doctor
             </NavLink>
-            <NavLink to={"/testt"} className="nav-link ">
-              Menu klen
+            <NavLink to={"/articlehome"} className="nav-link ">
+              Artikel
+            </NavLink>
+            <NavLink to={"/bmicalculator"} className="nav-link ">
+              Kalkulator BMI
             </NavLink>
           </Nav>
           <Nav className="ms-auto gap-1">
