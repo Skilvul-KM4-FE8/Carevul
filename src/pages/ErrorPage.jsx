@@ -1,11 +1,16 @@
-const ErrorPage = () => {
-    return (
-        <div>
-            <h1>404</h1>
-            <p>Page not found</p>
-        </div>
-        
-    )
-}
+import Navbar from "../components/Navbar.jsx";
 
-export default ErrorPage
+const ErrorPage = () => {
+  return (
+    <>
+      <Navbar />
+
+      <div className="error text-center">
+        <h1>404</h1>
+        <p className="text-center">Page not found</p>
+      </div>
+    </>
+  );
+};
+
+export default ErrorPage;
