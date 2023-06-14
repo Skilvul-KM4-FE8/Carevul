@@ -1,21 +1,23 @@
-import React, { useContext, useState } from 'react'
-import "./../styles/loginregis.css"
-import loginLogo from './../assets/login.svg'
+import React, { useContext, useState } from "react";
+import "./../styles/loginregis.css";
+import loginLogo from "./../assets/login.svg";
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { PaymentContext } from '../context/paymentContext';
+import axios from "axios";
+import { PaymentContext } from "../context/paymentContext";
 
 function Login() {
-  const [email,setEmail] = useState("")
-  const [password,setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { payment, setPayment } = useContext(PaymentContext);
   const navigate = useNavigate();
-  
-  const handleLogin=async(e)=>{
-    e.preventDefault()
 
-    let res = await axios.get("https://6454b891f803f345762f6469.mockapi.io/users");
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    let res = await axios.get(
+      "https://6454b891f803f345762f6469.mockapi.io/users"
+    );
     let data = await res.data;
 
     const ambilData = () => {
@@ -27,26 +29,25 @@ function Login() {
       }
 
       if (result < 1) {
-        alert("Gagal Login")
+        alert("Gagal Login");
       } else {
-        alert("Berhasil Login")
+        alert("Berhasil Login");
         const loginData = {
           email: result[0].email,
           name: result[0].name,
           id: result[0].id,
           img: result[0].image,
-        }
-        const loginDataJson = JSON.stringify(loginData)
-        localStorage.setItem("idUser", loginDataJson)
-        
+        };
+        const loginDataJson = JSON.stringify(loginData);
+        localStorage.setItem("idUser", loginDataJson);
+
         // if payment context have a data, then redirect to booking page
         if (payment) {
-          navigate("/bookingpage")
+          navigate("/bookingpage");
         } else {
-          navigate("/")
+          navigate("/");
         }
         // else redirect to home page
-    
       }
     };
     ambilData();
@@ -54,44 +55,62 @@ function Login() {
 
   return (
     <div>
-    <section className="login d-flex">
-      <div className="login-left h-100">
-        <div className="row justify-content-center align-items-center h-100">
-          <div className="col-7">
-            <div className="header">
-              <h1>Hallo, Carefriends</h1>
-              <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
-            </div>
-            <div className="login-form">
+      <section className="login d-flex">
+        <div className="login-left h-200">
+          <div className="row justify-content-center align-items-center h-100">
+            <div className="col-7">
+              <div className="header">
+                <h1>Hallo, Carefriends</h1>
+                <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
+              </div>
+              <div className="login-form">
+                <form id="form-login" onSubmit={handleLogin}>
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Masukkan Email"
+                  />
 
-              <form id="form-login" onSubmit={handleLogin}>
-                <label htmlFor="email" className="form-label">Email</label>
-                <input type="email" className="form-control" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Masukkan Email" />
+                  <label htmlFor="password" className="form-label mrgn-1">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Masukkan Password"
+                  />
 
-                <label htmlFor="password" className="form-label mrgn-1">Password</label>
-                <input type="password" className="form-control" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Masukkan Password" />
-
-                <button className="btn-2" type="submit">Login</button>
-              </form>
-              <p className="fsize-15 d-block text-center">
-                Kamu belum punya akun?
-                <Link to={"/regis"} style={{ textDecoration: "none" }}>
-                <span className="regis">Daftar Disini</span>
-              </Link>
-              </p>
+                  <button className="btn-2" type="submit">
+                    Login
+                  </button>
+                </form>
+                <p className="fsize-15 d-block text-center">
+                  Kamu belum punya akun?
+                  <Link to={"/regis"} style={{ textDecoration: "none" }}>
+                    <span className="regis">Daftar Disini</span>
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="login-right w-50 h-100 bg-color">
-        <div className="d-flex justify-content-center py-5">
-          <img src={loginLogo} alt="" />
+        <div className="login-right w-50 h-100 bg-color">
+          <div className="d-flex justify-content-center py-5">
+            <img src={loginLogo} alt="" />
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
     </div>
-  )
-  }
+  );
+}
 
-export default Login
+export default Login;
