@@ -35,6 +35,8 @@ import ConsultRoom from "./pages/ConsultRoom";
 import CategoryDoctor from "./pages/CategoryDoctor";
 import LoginDoctor from "./pages/LoginDoctor";
 import RegisterDoctor from "./pages/RegisterDoctor";
+import RoomChat from "./pages/RoomChat";
+import RoomChatProvider from "./context/roomChatContext";
 
 // import payment
 import PaymentPage from "./pages/PaymentPage";
@@ -74,7 +76,9 @@ const router = createBrowserRouter(
         <Route path="/bookingpage" element={<BookingPage />} />
 
         <Route path="/consult" element={<Consult />}>
-          <Route path="/consult/chatroom" element={<ConsultRoom />} />
+          <Route path="/consult/chatroom" element={<ConsultRoom />} >
+            <Route path="/consult/chatroom/:id" element={<RoomChat />} />
+          </Route>
           <Route path="/consult/category" element={<CategoryDoctor />} />
         </Route>
 
@@ -90,9 +94,11 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PaymentProvider>
-      {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
-      <RouterProvider router={router} />
-    </PaymentProvider>
+    <RoomChatProvider>
+      <PaymentProvider>
+        {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
+        <RouterProvider router={router} />
+      </PaymentProvider>
+    </RoomChatProvider>
   </React.StrictMode>
 );

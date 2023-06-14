@@ -29,6 +29,7 @@ const BookingPage = () => {
         setPayment({
             ...payment,
             userName: e.target.value,
+            idUser: loginData.id,
             complaint: complaint
         })
         console.log(fullName)
@@ -38,6 +39,7 @@ const BookingPage = () => {
         setComplaint(e.target.value)
         setPayment({
             ...payment,
+            idUser: loginData.id,
             userName: fullName,
             complaint: e.target.value
         })
@@ -48,6 +50,7 @@ const BookingPage = () => {
         e.preventDefault()
         setPayment({
             ...payment,
+            idUser: loginData.id,
             userName: fullName,
             complaint: complaint
         })
