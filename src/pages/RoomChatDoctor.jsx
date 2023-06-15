@@ -3,6 +3,9 @@ import { RoomChatForDoctorContext } from "../context/roomChatForDoctor";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Input, MessageBox, Navbar } from "react-chat-elements";
 import axios from "axios";
+import { FiRefreshCcw } from "react-icons/fi";
+import { AiOutlineCloudSync } from "react-icons/ai";
+import { RiSendPlaneLine } from "react-icons/ri";
 
 const RoomChatDoctor = () => {
     const {roomChatDoctor} = useContext(RoomChatForDoctorContext);
@@ -47,6 +50,10 @@ const RoomChatDoctor = () => {
         setChatData(roomWithChats?.chats);
     };
             
+    const handleRefreshChat = async () => {
+        const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
+        setChatData(roomWithChats?.chats);
+    };
 
 
     return (
@@ -73,8 +80,9 @@ const RoomChatDoctor = () => {
                             <div >
                                 <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
                             </div>
-                            <div >
-                                <button className="btn color-carevul-gradient">Send</button>
+                            <div>
+                                <button className="btn color-carevul-gradient"><RiSendPlaneLine className="fs-1" /></button>
+                                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-carevul fs-2" /></span>
                             </div>
                         </form>
                     </div>
