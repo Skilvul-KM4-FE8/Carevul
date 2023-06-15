@@ -3,25 +3,27 @@ import "./../styles/article-home.css";
 import ArticleCardLanding from "../components/ArticleCardLanding";
 
 const ArticleLanding = () => {
-    return (
-      <>
-        <div className="article-top">
-          <h3 id="article-title">Artikel Kesehatan Terpopuler</h3>
-          <p id="article-subtitle">Terdapat beberapa artikel terpopuler yang dapat kamu akses sesuai dengan kebutuhanmu nih Carefriends!</p>
-        </div>
-        <section id="card" className="article-card">
-          <Container fluid>
-            <Row id="card-row">
-              <ArticleCardLanding />
-            </Row>
-          </Container>
-        </section>
-        <div>
-          <button className="btn main-button">Artikel Lainnya</button>
-        </div>
-      </>
-    );
-  };
+  return (
+    <>
+      <div className="article-top">
+        <h3 id="article-title">Artikel Kesehatan Terpopuler</h3>
+        <p id="article-subtitle">
+          Terdapat beberapa artikel terpopuler yang dapat kamu akses sesuai
+          dengan kebutuhanmu nih Carefriends!
+        </p>
+      </div>
+      <section id="card" className="article-card">
+        <Container fluid>
+          <Row id="card-row">
+            <ArticleCardLanding />
+          </Row>
+        </Container>
+      </section>
+      <div className="text-center">
+        <button className="logindong main-button">Artikel Lainnya</button>
+      </div>
+    </>
+  );
+};
 
 export default ArticleLanding;
-  
