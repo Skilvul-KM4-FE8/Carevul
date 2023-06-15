@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import "./../styles/loginregis.css"
 import loginLogo from './../assets/login.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 function LoginDoctor() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+  const navigate = useNavigate()
   
   const handleLogin=async(e)=>{
     e.preventDefault()
@@ -37,6 +38,8 @@ function LoginDoctor() {
         const loginDataJson = JSON.stringify(loginData);
         localStorage.setItem("idDoctor", loginDataJson);
         // localStorage.setItem("idUser", result[0].id)
+        navigate("/detaildoctor")
+
       }
     };
     ambilData();

@@ -5,7 +5,7 @@ export const RoomChatForDoctorContext = createContext();
 const RoomChatForDoctorProvider = ({ children }) => {
   const [roomChatDoctor, setRoomChatDoctor] = useState();
 
-  return <RoomChatContext.Provider value={{ roomChatDoctor, setRoomChatDoctor }}>{children}</RoomChatContext.Provider>;
+  return <RoomChatForDoctorContext.Provider value={{ roomChatDoctor, setRoomChatDoctor }}>{children}</RoomChatForDoctorContext.Provider>;
 };
 
 export default RoomChatForDoctorProvider;

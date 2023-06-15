@@ -45,6 +45,7 @@ import BookingPage from "./pages/BookingPage";
 import Consult from "./pages/Consult";
 import DetailDoctor from "./pages/DetailDoctor";
 import RoomChatForDoctorProvider from "./context/roomChatForDoctor";
+import RoomChatDoctor from "./pages/RoomChatDoctor";
 
 
 const router = createBrowserRouter(
@@ -87,7 +88,7 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="/detailDoctor" element={<DetailDoctor />} >
-        <Route path="/detailDoctor/:id" element={<DetailDoctor />} />
+        <Route path="/detailDoctor/:id" element={<RoomChatDoctor />} />
       </Route>
 
       <Route path="/login" element={<Login />} />

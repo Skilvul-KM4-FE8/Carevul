@@ -1,16 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ChatItemList from "./ChatItemList";
 import { Outlet } from "react-router-dom";
+import ChatItemListForDoctor from "./ChatItemListForDoctor";
+import axios from "axios";
 
 const DetailDoctor = () => {
     const [availableChatRooms, setAvailableChatRooms] = useState([]);
 
     // get data logged doctor from localstorage
     const loggedDoctor = JSON.parse(localStorage.getItem("idDoctor"));
+    console.log(loggedDoctor);
 
     useEffect(() => {
         const getBookedUsers = async () => {
-            const doctorChatRooms = await axios.get(`https://sk-chat-api.vercel.app/api/room?doctorId=${loggedDoctor.id}`).then((res) => res.data);
+            const doctorChatRooms = await axios.get(`https://sk-chat-api.vercel.app/api/room?userId=${loggedDoctor.id}`).then((res) => res.data);
             const usersData = await axios.get(`https://6454b891f803f345762f6469.mockapi.io/users`).then((res) => res.data);
 
             const chatRooms = doctorChatRooms.map((room) => {
@@ -33,9 +36,9 @@ const DetailDoctor = () => {
                             <section id="chatListRoom">
                                 <div className="container-fluid">
                                     {availableChatRooms.map((roomData) => (
-                                        <div className="row">
+                                        <div className="row" key={roomData.id}>
                                             <div className="col-12">
-                                                <ChatItemList 
+                                                <ChatItemListForDoctor 
                                                     key={roomData.id}
                                                     avatar={roomData.user.image}
                                                     alt={roomData.user.email}
