@@ -31,7 +31,7 @@ function Login() {
       if (result < 1) {
         alert("Gagal Login");
       } else {
-        alert("Berhasil Login");
+        // alert("Berhasil Login");
         const loginData = {
           email: result[0].email,
           name: result[0].name,
