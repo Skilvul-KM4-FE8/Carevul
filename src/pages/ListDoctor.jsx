@@ -1,6 +1,6 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/list-doctor.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const ListDoctor = () => {
@@ -9,12 +9,25 @@ const ListDoctor = () => {
 
   const navigate = useNavigate();
 
+  const param = useParams();
+
+  let search = ""
+
+  if (param.id == "semua_dokter") {
+    search = ""
+  } else {
+    search = "?kategori=" + param.id
+  }
+
   useEffect(() => {
     // fetch("https://64506b72a3221969114a2d25.mockapi.io/doctors")
-    fetch("https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor")
+    if (search) {
+      console.log(search)
+    fetch(`https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor` + search)
       .then((response) => response.json())
       .then((data) => setDoctors(data));
       console.log(doctors)
+    }
   }, []);
 
 

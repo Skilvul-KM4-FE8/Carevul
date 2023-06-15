@@ -82,7 +82,9 @@ const router = createBrowserRouter(
           <Route path="/consult/chatroom" element={<ConsultRoom />} >
             <Route path="/consult/chatroom/:id" element={<RoomChat />} />
           </Route>
-          <Route path="/consult/category" element={<CategoryDoctor />} />
+          <Route path="/consult/category" element={<CategoryDoctor />} /> 
+            <Route path="/consult/category/:id" element={<ListDoctor />} />
+
         </Route>
 
       </Route>

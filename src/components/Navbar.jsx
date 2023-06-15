@@ -22,11 +22,11 @@ function BasicExample() {
             <NavLink to={"/"} className="nav-link">
               Home
             </NavLink>
-            <NavLink to={"/paymentdoctor"} className="nav-link ">
+            {/* <NavLink to={"/paymentdoctor"} className="nav-link ">
               Payment Test
-            </NavLink>
-            <NavLink to={"/listdoctor"} className="nav-link ">
-              List Doctor
+            </NavLink> */}
+            <NavLink to={"/consult/category"} className="nav-link ">
+              Konsultasi
             </NavLink>
             <NavLink to={"/articlehome"} className="nav-link ">
               Artikel

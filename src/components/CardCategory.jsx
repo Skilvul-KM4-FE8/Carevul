@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/category-doctor.css";
+import { Link } from "react-router-dom";
 
 function CardCategory() {
   const [cards, setCard] = useState([])
@@ -16,7 +17,8 @@ function CardCategory() {
   return (
     <>
             {cards.map(item => (
-                <Col md={{ span: 3, offset: 0 }} key={item.id} id="col-card">
+              <Col md={3} key={item.id} id="col-card">
+                  <Link to={`/consult/category/${item.link}`} key={item.id}>
                   <div>
                     <Card className="card" id="card">
                       <div id="gradient-bg"></div>
@@ -24,6 +26,7 @@ function CardCategory() {
                       <Card.Title className="card-category-title">{item.category}</Card.Title>
                     </Card>
                   </div>
+              </Link>
                 </Col>
             ))}
 
