@@ -79,7 +79,7 @@ const PaymentPage = () => {
                                         <img src={doctor.image} alt="doctor" className="rounded-circle" />
                                         </Col>
                                         <Col className="text-start mb-3" md={7} >
-                                        <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">dr. Testt bin udin</h4>
+                                        <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">{doctor.name}</h4>
                                         <p className=" doctor-name">Dokter {doctor.kategori} <br /> {doctor.instansi}</p>
                                         <h5 className=" doctor-name">  <span className="text-carevul ">Rp. 20000</span></h5>
                                         </Col>

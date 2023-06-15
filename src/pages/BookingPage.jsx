@@ -139,7 +139,7 @@ const BookingPage = () => {
                                 <form id="form-book" onSubmit={handleSubmitFormBooking}>
                                     <h5>Jadwal Anda</h5>
                                     <p>Tanggal : 12 Jun 2023 | 20:00 WIB <br />
-                                    Nama Dokter : <span className="text-carevul fw-bold">dr. Jakwan Bagung</span></p>
+                                    Nama Dokter : <span className="text-carevul fw-bold">{payment.name}</span></p>
                                     <h6>Nama Lengkap :  </h6>
                                     <div className="input-group mb-3">
                                         <input type="text" className="form-control" placeholder="Masukkan Nama Lengkap" aria-label="Username" aria-describedby="basic-addon1" name="client_name" id="input-name" value={fullName} onChange={e => handleChangeFullName(e)} />
