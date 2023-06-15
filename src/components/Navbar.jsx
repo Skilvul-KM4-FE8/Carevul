@@ -36,7 +36,7 @@ function BasicExample() {
             Login
           </NavLink>
           <NavLink
-            to={"/register"}
+            to={"/regis"}
             className="btn color-carevul-gradient text-white m-1"
           >
             Register
