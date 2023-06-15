@@ -72,7 +72,7 @@ const ConsultRoom = () => {
         </section>
       ) : (
         <section id="chat">
-          <div className="border container-fluid rounded shadow">
+          <div className="border container rounded shadow">
             <Row>
               <div className="col-4">
                 <section id="chatListRoom">

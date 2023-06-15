@@ -74,9 +74,18 @@ const RoomChat = () => {
         </div>
       </div>
       <div className="col">
-        <form className="d-flex justify-content-between" onSubmit={(e) => handleSubmitForm(e)}>
-          <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> <button className="btn color-carevul-gradient">Send</button>
-        </form>
+        <div className="container-fluid">
+          <div className="row">
+            <form className="d-flex justify-content-between align-items-center" onSubmit={(e) => handleSubmitForm(e)}>
+              <div >
+                <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
+              </div>
+              <div >
+                <button className="btn color-carevul-gradient">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
