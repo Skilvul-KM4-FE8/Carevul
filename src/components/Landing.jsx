@@ -9,7 +9,7 @@ import { Container, Row } from "react-bootstrap";
 const Landing = () => {
   return (
     <>
-      <section className=" color-carevul-gradient mt-0 ">
+      <section className=" color-carevul-gradient  mt-0 ">
         <div className="hero-container d-flex justify-content-space-between m-3 mt-0">
           <div className="hero-text text-white ms-4">
             <h3 className="text-white mt-5">
@@ -47,8 +47,8 @@ const Landing = () => {
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Online} alt="" />
-                    <h3>Konsultasi Online</h3>
-                    <h6 className="text-center">
+                    <h3 className="text-center mx-2">Konsultasi Online</h3>
+                    <h6 className="text-center mx-3">
                       Menyediakan layanan konsultasi online selama 24 jam
                     </h6>
                   </div>
@@ -58,8 +58,8 @@ const Landing = () => {
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={History} alt="" />
-                    <h3>Medis Profesional</h3>
-                    <h6 className="text-center">
+                    <h3 className="text-center mx-2">Medis Profesional</h3>
+                    <h6 className="text-center mx-3">
                       Tenaga medis yang sudah berpengalaman di bidangnya
                     </h6>
                   </div>
@@ -69,8 +69,8 @@ const Landing = () => {
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Doctor} alt="" />
-                    <h3>Dokter Berkualitas</h3>
-                    <h6 className="text-center">
+                    <h3 className="text-center mx-2">Dokter Berkualitas</h3>
+                    <h6 className="text-center mx-3">
                       Lulusan dokter dari banyak negara maju yang berkualitas
                     </h6>
                   </div>

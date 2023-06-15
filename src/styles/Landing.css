@@ -10,6 +10,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.Character {
+  margin-right: 100px !important;
+}
+
 .text-center {
   text-align: center;
 }
@@ -160,7 +164,7 @@ footer li {
 .hero-container {
   overflow: hidden;
   position: relative;
-  width: 82%;
+  width: 95%;
   margin: 0px auto;
   min-height: 450px;
 }
