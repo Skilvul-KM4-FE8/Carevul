@@ -5,6 +5,7 @@ import "../styles/Landing.css";
 import Pict1 from "../assets/pict1.png";
 import Pict2 from "../assets/pict2.png";
 import { Container, Row } from "react-bootstrap";
+import ArticleLanding from "../pages/ArticleLanding";
 
 const Landing = () => {
   return (
@@ -100,6 +101,11 @@ const Landing = () => {
             </div>
           </div>
         </section>
+      </section>
+
+      {/* article */}
+      <section className="articlelanding">
+        <ArticleLanding />
       </section>
     </>
   );
