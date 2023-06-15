@@ -60,7 +60,7 @@ const ListDoctor = () => {
                           <h5 className=" doctor-name">  <span className="text-carevul ">Rp. 20000</span></h5>
                         </Col>
                         <Col className="d-flex justify-content-center align-items-center">
-                          <button onClick={() => navigate(`../paymentdoctor/${doctor.id}`)} className="btn text-white fw-bold color-carevul-gradient px-5 py-2 shadow-sm">Pilih Dokter</button>
+                          <button onClick={() => navigate(`/paymentdoctor/${doctor.id}`)} className="btn text-white fw-bold color-carevul-gradient px-5 py-2 shadow-sm">Pilih Dokter</button>
                         </Col>
                       </Row>
                     </Container>
