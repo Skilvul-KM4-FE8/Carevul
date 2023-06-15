@@ -24,27 +24,10 @@ function BasicExample() {
     console.log("logout Account");
   };
 
+  console.log(isLoggedIn);
+
   let component = "";
-  if (!isLoggedIn) {
-    component = (
-      <>
-        <div className="text-center ">
-          <NavLink
-            to={"/login"}
-            className="logindong btn text-carevul border-carevul m-1"
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to={"/regis"}
-            className="btn color-carevul-gradient text-white m-1"
-          >
-            Register
-          </NavLink>
-        </div>
-      </>
-    );
-  } else {
+  if (isLoggedIn) {
     component = (
       <>
         <div className="text-center">
@@ -73,7 +56,26 @@ function BasicExample() {
           </Dropdown>
         </div>
       </>
-    );
+    )
+  } else {
+      component = (
+        <>
+          <div className="text-center ">
+            <NavLink
+              to={"/login"}
+              className="logindong btn text-carevul border-carevul m-1"
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to={"/regis"}
+              className="btn color-carevul-gradient text-white m-1"
+            >
+              Register
+            </NavLink>
+          </div>
+        </>
+      );
   }
 
   return (
@@ -105,18 +107,7 @@ function BasicExample() {
             </NavLink>
           </Nav>
           <Nav className="ms-auto gap-1">
-            <NavLink
-              to={"/login"}
-              className="logindong btn text-carevul border-carevul"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to={"/register"}
-              className="btn color-carevul-gradient text-white"
-            >
-              Register
-            </NavLink>
+           {component}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -13,6 +13,8 @@ const ListDoctor = () => {
 
   let search = ""
 
+  console.log(param.id)
+
   if (param.id == "semua_dokter") {
     search = ""
   } else {
