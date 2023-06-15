@@ -40,10 +40,10 @@ p {
 }
 
 /* ============ Article Read ==========*/
-.article-read {
+/* .article-read {
     margin-top: 50px;
     margin-bottom: 100px;
-}
+} */
 
 #fulltext {
     white-space: pre-line;

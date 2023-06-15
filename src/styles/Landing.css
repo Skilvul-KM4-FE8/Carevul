@@ -14,8 +14,19 @@ body {
   margin-right: 100px !important;
 }
 
+.Character2 {
+  margin-right: 50px !important;
+}
+
 .text-center {
   text-align: center;
+  color: #7C8B9D;
+}
+
+.text-center2 {
+  text-align: center;
+  color: #7C8B9D;
+  font-weight: 300;
 }
 
 .p-relative {
@@ -45,11 +56,21 @@ body {
   justify-content: space-around;
 }
 
+.hero {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #1e293b;
+  width: auto;
+  height: 400px;
+  background: linear-gradient(#21a3f8, #6700cc);
+}
+
 .hero-text {
   /* padding: 60px 0; */
   color: #ffffff;
   width: 600px;
-  /* margin: 50px 160px; */
+  margin-left: 140px !important;
 }
 
 .hero-text h1 {
@@ -61,6 +82,7 @@ body {
   font-size: 18px;
   margin: 10px 0;
   font-weight: 300;
+  line-height: 30px;
 }
 
 /* navbar */
@@ -172,7 +194,7 @@ footer li {
 .hero-image {
   width: 600px;
   position: absolute;
-  bottom: -17px;
+  bottom: -10px;
   right: 0;
 }
 
@@ -199,6 +221,7 @@ footer li {
   font-size: 30px;
   justify-content: center;
   padding: 10px 0 30px 0;
+  font-weight: 700;
 }
 
 /* .row {
@@ -291,12 +314,14 @@ footer li {
 }
 
 .card-introduction .desc {
-  margin-left: 30px;
   color: #5f6d7e;
 }
 
 .card-introduction .desc p {
   margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #5F6D7E;
 }
 
 .btn-art {
