@@ -10,7 +10,7 @@ import yt from "../assets/icon/icons8-youtube.svg";
 const footer = () => {
   return (
     <>
-      <di className="bg-color-footer mt-5 stroke-card-border shadow-sm">
+      <div className="bg-color-footer mt-5 stroke-card-border shadow-sm">
         <div className="container py-5 ">
           <div className="row d-flex justify-content-between">
             <div className="col-mb-5 col-6 mt-3 ">
@@ -94,7 +94,7 @@ const footer = () => {
             </div>
           </div>
         </div>
-      </di>
+      </div>
     </>
   );
 };
