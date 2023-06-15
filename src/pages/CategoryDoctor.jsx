@@ -4,13 +4,24 @@ import { Link } from "react-router-dom";
 import "./../styles/category-doctor.css";
 
 const CategoryDoctor = () => {
+
+  // const [category, setCategory] = useState([])
+
+  // useEffect(() => {
+  //   const getCategory = async () => {
+  //     const response = await fetch("http://localhost:3000/category");
+  //     const data = await response.json();
+  //     setCategory(data);
+  //   };
+
+
   return (
     <>
       <section id="card" className="category-card">
         <Container fluid>
-          <Row id="card-row">
+          <div id="card-row" className="row justify-content-center">
             <CardCategory />
-          </Row>
+          </div>
         </Container>
       </section>
     </>
