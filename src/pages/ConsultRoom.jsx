@@ -72,27 +72,29 @@ const ConsultRoom = () => {
         </section>
       ) : (
         <section id="chat">
-          <Container className="border">
+          <div className="border container rounded shadow">
             <Row>
               <div className="col-4">
                 <section id="chatListRoom">
-                  <Container>
-                    <Row>
+                  <div className="container-fluid">
                       {availableChatRooms.map((roomData) => (
-                        <ChatItemList
-                          key={roomData.id}
-                          avatar={roomData.doctor.image}
-                          alt={roomData.doctor.email}
-                          title={roomData.doctor.name}
-                          subtitle={roomData.doctor.instansi}
-                          date={new Date()}
-                          unread={0}
-                          id={roomData.id}
-                          data={roomData}
-                        />
+                        <Row>
+                          <div className="col">
+                            <ChatItemList
+                              key={roomData.id}
+                              avatar={roomData.doctor.image}
+                              alt={roomData.doctor.email}
+                              title={roomData.doctor.name}
+                              subtitle={roomData.doctor.instansi}
+                              date={new Date()}
+                              unread={0}
+                              id={roomData.id}
+                              data={roomData}
+                              />
+                          </div>
+                        </Row>
                       ))}
-                    </Row>
-                  </Container>
+                  </div>
                 </section>
               </div>
               <div className="col-8">
@@ -101,7 +103,7 @@ const ConsultRoom = () => {
                 </section>
               </div>
             </Row>
-          </Container>
+          </div>
         </section>
       )}
     </>

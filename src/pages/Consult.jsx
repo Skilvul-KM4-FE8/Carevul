@@ -21,7 +21,7 @@ const Consult = () => {
                 </div>
             </div>
         </header>
-            <div className="container mt-4"> 
+            <div className="container-fluid mt-4"> 
 
             {/* Section for outlet */}
                 <Outlet />

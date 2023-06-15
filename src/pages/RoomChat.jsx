@@ -54,7 +54,8 @@ const RoomChat = () => {
         <div id="chatroom-box">
           {chatData.map((item, index) => (
             <MessageBox
-              position="left"
+            {...console.log(item)}
+              position={(item.userId === loggedUser.id) ? "right" : "left"}
               // title={item.message}
               type="text"
               text={item.message}
@@ -73,9 +74,18 @@ const RoomChat = () => {
         </div>
       </div>
       <div className="col">
-        <form className="d-flex justify-content-between" onSubmit={(e) => handleSubmitForm(e)}>
-          <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> <button className="btn color-carevul-gradient">Send</button>
-        </form>
+        <div className="container-fluid">
+          <div className="row">
+            <form className="d-flex justify-content-between align-items-center" onSubmit={(e) => handleSubmitForm(e)}>
+              <div >
+                <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
+              </div>
+              <div >
+                <button className="btn color-carevul-gradient">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
