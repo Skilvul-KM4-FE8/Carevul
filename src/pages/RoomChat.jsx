@@ -47,6 +47,11 @@ const RoomChat = () => {
     setChatData(roomWithChats?.chats);
   };
 
+  const handleRefreshChat = async () => {
+    const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
+    setChatData(roomWithChats?.chats);
+  };
+
   return (
     <>
       <Navbar left={<Avatar src={roomChat?.doctor?.image} alt="avatar" size="xlarge" type="rounded" />} center={<div>{roomChat?.doctor?.name}</div>} right={<div>Dokter {roomChat?.doctor?.kategori}</div>} type="light" />
@@ -82,6 +87,7 @@ const RoomChat = () => {
               </div>
               <div >
                 <button className="btn color-carevul-gradient">Send</button>
+                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-danger" /></span>
               </div>
             </form>
           </div>

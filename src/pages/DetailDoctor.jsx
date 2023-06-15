@@ -13,7 +13,7 @@ const DetailDoctor = () => {
 
     useEffect(() => {
         const getBookedUsers = async () => {
-            const doctorChatRooms = await axios.get(`https://sk-chat-api.vercel.app/api/room?userId=${loggedDoctor.id}`).then((res) => res.data);
+            const doctorChatRooms = await axios.get(`https://sk-chat-api.vercel.app/api/room?userId=${loggedDoctor.id}&userType=DOCTOR`).then((res) => res.data);
             const usersData = await axios.get(`https://6454b891f803f345762f6469.mockapi.io/users`).then((res) => res.data);
 
             const chatRooms = doctorChatRooms.map((room) => {
