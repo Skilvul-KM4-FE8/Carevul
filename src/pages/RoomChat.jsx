@@ -54,7 +54,8 @@ const RoomChat = () => {
         <div id="chatroom-box">
           {chatData.map((item, index) => (
             <MessageBox
-              position="left"
+            {...console.log(item)}
+              position={(item.userId === loggedUser.id) ? "right" : "left"}
               // title={item.message}
               type="text"
               text={item.message}
