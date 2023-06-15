@@ -5,6 +5,7 @@ import { Avatar, Input, MessageBox, Navbar } from "react-chat-elements";
 import axios from "axios";
 import { FiRefreshCcw } from "react-icons/fi";
 import { AiOutlineCloudSync } from "react-icons/ai";
+import { RiSendPlaneLine } from "react-icons/ri";
 
 const RoomChatDoctor = () => {
     const {roomChatDoctor} = useContext(RoomChatForDoctorContext);
@@ -80,8 +81,8 @@ const RoomChatDoctor = () => {
                                 <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
                             </div>
                             <div>
-                                <button className="btn color-carevul-gradient">Send</button>
-                                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-danger" /></span>
+                                <button className="btn color-carevul-gradient"><RiSendPlaneLine className="fs-1" /></button>
+                                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-carevul fs-2" /></span>
                             </div>
                         </form>
                     </div>

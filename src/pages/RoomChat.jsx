@@ -3,6 +3,8 @@ import { Avatar, Input, MessageBox, Navbar } from "react-chat-elements";
 import { RoomChatContext } from "../context/roomChatContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { RiSendPlaneLine } from "react-icons/ri";
+import { AiOutlineCloudSync } from "react-icons/ai";
 
 const RoomChat = () => {
   const { roomChat } = useContext(RoomChatContext);
@@ -86,8 +88,8 @@ const RoomChat = () => {
                 <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
               </div>
               <div >
-                <button className="btn color-carevul-gradient">Send</button>
-                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-danger" /></span>
+                <button className="btn color-carevul-gradient"><RiSendPlaneLine className="fs-2" /></button>
+                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-carevul fs-2" /></span>
               </div>
             </form>
           </div>

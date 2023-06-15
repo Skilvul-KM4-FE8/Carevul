@@ -78,7 +78,7 @@ const ConsultRoom = () => {
                 <section id="chatListRoom">
                   <div className="container-fluid">
                       {availableChatRooms.map((roomData) => (
-                        <Row>
+                        <Row key={roomData.id}>
                           <div className="col">
                             <ChatItemList
                               key={roomData.id}
