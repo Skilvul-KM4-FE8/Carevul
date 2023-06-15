@@ -23,10 +23,20 @@ function LoginDoctor() {
       }
 
       if (result < 1) {
-    alert("Gagal Login")
+        alert("Gagal Login")
       } else {
-    alert("Berhasil Login")
-    localStorage.setItem("idUser", result[0].id)
+        alert("Berhasil Login")
+        const loginData = {
+          email: result[0].email,
+          name: result[0].name,
+          id: result[0].id,
+          instansi : result[0].instansi,
+          kategori: result[0].kategori,
+          img: result[0].image,
+        };
+        const loginDataJson = JSON.stringify(loginData);
+        localStorage.setItem("idDoctor", loginDataJson);
+        // localStorage.setItem("idUser", result[0].id)
       }
     };
     ambilData();
