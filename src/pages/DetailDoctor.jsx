@@ -30,7 +30,7 @@ const DetailDoctor = () => {
     return (
         <>
             <section id="chat-user">
-                <div className="border container rounded shadow">
+                <div className="border container-fluid rounded shadow">
                     <div className="row">
                         <div className="col-4">
                             <section id="chatListRoom">
