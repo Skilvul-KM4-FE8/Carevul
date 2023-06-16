@@ -20,12 +20,12 @@ body {
 
 .text-center {
   text-align: center;
-  color: #7C8B9D;
+  color: #7c8b9d;
 }
 
 .text-center2 {
   text-align: center;
-  color: #7C8B9D;
+  color: #7c8b9d;
   font-weight: 300;
 }
 
@@ -321,7 +321,7 @@ footer li {
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 22px;
-  color: #5F6D7E;
+  color: #5f6d7e;
 }
 
 .btn-art {
@@ -407,14 +407,23 @@ footer hr {
 }
 
 @media (max-width: 1350px) {
-  .Character {
+  .Character,
+  .Character2 {
     display: none;
+  }
+  .hero-text {
+    margin: 0;
   }
 }
 
 /* Mobiles */
 @media (max-width: 767px) {
-  .Character {
+  .Character,
+  .Character2 {
     display: none;
+  }
+  .hero-text {
+    margin-top: 40px !important;
+    margin-left: 20px !important;
   }
 }

@@ -24,13 +24,22 @@ const footer = () => {
                   tanpa antri, tanpa ribet, konsulin aja!
                 </h6>
               </p>
-
               <div className="social-media d-flex justify-content-between">
-                <img src={fb} alt="" />
-                <img src={ins} alt="" />
-                <img src={twi} alt="" />
-                <img src={lin} alt="" />
-                <img src={yt} alt="" />
+                <a href="https://www.facebook.com" target="_blank">
+                  <img src={fb} alt="" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                  <img src={ins} alt="" />
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                  <img src={twi} alt="" />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                  <img src={lin} alt="" />
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                  <img src={yt} alt="" />
+                </a>
               </div>
             </div>
 
