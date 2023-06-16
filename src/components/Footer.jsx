@@ -12,7 +12,7 @@ const footer = () => {
     <>
       <div className="bg-color-footer mt-5 stroke-card-border shadow-sm">
         <div className="container ">
-          <div className="row d-flex justify-content-between pt-4 pb-3">
+          <div className="row d-flex justify-content-between pt-4 pb-3 gap-5">
             <div className="col-mb-5 col-4 mt ">
               <img src={carevulLogo} alt="" />
               <div className="text-gray mb-4">
@@ -37,20 +37,20 @@ const footer = () => {
             <div className="col-lg col-7">
 
               <div className="list-footer flex-column d-flex justify-content-around">
-                <div className="d-flex flex-column  gap-2">
+                <div className="d-flex flex-column  gap-2 mb-3">
               <h5 className="text-carevul">Site Map</h5>
                   <Link to="/" className="fw-normal text-gray">
                     Home
                   </Link>
                   <Link
-                    to="./../article/article.html"
+                    to="articlehome"
                     className="fw-normal text-gray"
                   >
                     Artikel
                   </Link>
 
                   <Link
-                    to="./../bmi-calculator/index.html"
+                    to="/bmicalculator"
                     className="fw-normal text-gray"
                   >
                     Kalkulator BMI

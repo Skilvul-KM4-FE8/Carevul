@@ -4,7 +4,7 @@ import Cardticle from "../components/Cardticle";
 
 const ArticleHome = () => {
   return (
-    <>
+    <div className="container">
       <div className="article-top">
         <h3 id="article-title">Artikel Kesehatan Terpopuler</h3>
         <p id="article-subtitle">Terdapat beberapa artikel terpopuler yang dapat kamu akses sesuai dengan kebutuhanmu nih Carefriends!</p>
@@ -16,7 +16,7 @@ const ArticleHome = () => {
           </Row>
         </Container>
       </section>
-    </>
+    </div>
   );
 };
 
