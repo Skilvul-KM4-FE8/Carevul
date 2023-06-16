@@ -5,26 +5,29 @@ import "../styles/Landing.css";
 import Pict1 from "../assets/pict1.png";
 import Pict2 from "../assets/pict2.png";
 import { Container, Row } from "react-bootstrap";
+import ArticleLanding from "../pages/ArticleLanding";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
     <>
-      <section className=" color-carevul-gradient  mt-0 ">
+      
+      <section className="mt-0 hero">
         <div className="hero-container d-flex justify-content-space-between m-3 mt-0">
-          <div className="hero-text text-white ms-4">
-            <h3 className="text-white mt-5">
+          <div className="hero-text ">
+            <h1 >
               Selamat Datang
               <br />
               di Carevul!
-            </h3>
-            <h5 className="text-white mt-3">
+            </h1>
+            <p className="text-white mt-3">
               Layanan kesehatan yang dapat kamu akses secara online.
               <br /> Gratis! dimanapun dan kapanpun. Segera hubungi dokter
               pilihanmu di Carevul!
-            </h5>
-            <button className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3">
+            </p>
+            <Link to={"/consult/category"} className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3">
               Lebih Lanjut
-            </button>
+            </Link>
           </div>
           <div className="hero-image">
             <img src={Pict1} className="Character" alt="" />
@@ -36,41 +39,37 @@ const Landing = () => {
 
       <section className="service">
         <div className="">
-          <h1 className="a-text d-flex">Pelayanan kami</h1>
-          <h6 className="text-center">
-            Beberapa pelayanan kami yang bisa kamu dapatkan sesuai dengan
-            kebutuhanmu nih Carefriends!
-          </h6>
-          <div className="container-fluid">
-            <Row className="gap-4 justify-content-center">
-              <div className="col-md-3 m-md-4 ">
+          <h1 className="a-text d-flex mt-5">Pelayanan kami</h1>
+          <div className="container-fluid mb-4">
+            <Row className="gap-5 justify-content-center">
+              <div className="col-md-3 ">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Online} alt="" />
                     <h3 className="text-center mx-2">Konsultasi Online</h3>
-                    <h6 className="text-center mx-3">
+                    <h6 className="text-center2 mx-3">
                       Menyediakan layanan konsultasi online selama 24 jam
                     </h6>
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 m-md-4">
+              <div className="col-md-3 ">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={History} alt="" />
                     <h3 className="text-center mx-2">Medis Profesional</h3>
-                    <h6 className="text-center mx-3">
+                    <h6 className="text-center2 mx-3">
                       Tenaga medis yang sudah berpengalaman di bidangnya
                     </h6>
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 m-md-4">
+              <div className="col-md-3 ">
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Doctor} alt="" />
                     <h3 className="text-center mx-2">Dokter Berkualitas</h3>
-                    <h6 className="text-center mx-3">
+                    <h6 className="text-center2 mx-3">
                       Lulusan dokter dari banyak negara maju yang berkualitas
                     </h6>
                   </div>
@@ -83,24 +82,32 @@ const Landing = () => {
         <section className="introduction">
           <div className="a-container">
             <div className="card-introduction d-flex align-center">
-              <img src={Pict2} className="Character" alt="" />
+              <img src={Pict2} className="Character2" alt="" />
               <div className="desc">
                 <h2>Kenalan sama kita yuk!</h2>
-                <h6>
+                <p>
                   Dear Carefriends, terima kasih telah membersamai kami sejak
                   tahun 2023. Kami berkomitmen untuk membantu masyarakat dalam
                   layanan konsultasi secara online dengan tenaga kesehatan yang
                   ahli dan profesional.
-                </h6>
-                <h6>
+                </p>
+                <p>
                   Tetap berkembang bersama kami untuk mendukung fasilitas
                   Telemedicine yang nyaman digunakan ya Carefriends!
-                </h6>
+                </p>
               </div>
             </div>
           </div>
         </section>
       </section>
+
+      <div>
+        {/* article */}
+        <section className="articlelanding container">
+          <ArticleLanding />
+        </section>
+      </div>
+      
     </>
   );
 };

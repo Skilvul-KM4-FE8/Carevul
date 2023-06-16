@@ -15,10 +15,7 @@ const BookingPage = () => {
     // For get data login from localstorage
     const loginData = JSON.parse(localStorage.getItem("idUser"))
 
-    // validate if payment context have a data
-    if (!payment) {
-        navigate("/listdoctor")
-    }
+    
 
     console.log(fullName)
     console.log(complaint)
@@ -80,11 +77,16 @@ const BookingPage = () => {
         })
         .then(res => res.json())
         .then(alert('Booking berhasil dilakukan'))
-        .then(setPayment(false) )
         .then(navigate('/consult/chatroom'))
+
 
         // clear payment
         setPayment(false)
+
+        // validate if payment context have a data
+        if (!payment) {
+        navigate("/listdoctor")
+    }
 
         // // show allert for success
         // alert('Booking berhasil dilakukan')
@@ -125,8 +127,8 @@ const BookingPage = () => {
             <div className="container mt-5">
                 <div className="row justify-content-md-center">
                     <div className="col-md-7 text-center">
-                        <h4 className="text-carevul">Check Jadwal Konsultasi</h4>
-                        <p className="text-light-gray">Pastikan jadwal yang dipilih sesuai dengan pilihan kamu. Yuk, lengkapi nama  lengkap serta keluhan pada kolom di bawah</p>
+                        <h4 className="text-carevul">Mau Konsul Apanih ?</h4>
+                        <p className="text-light-gray text-center mb-4">Yuk, lengkapi nama  lengkap serta keluhan pada kolom di bawah</p>
                     </div>
                 </div>
             <div className="row justify-content-md-center">
@@ -135,9 +137,7 @@ const BookingPage = () => {
                         <div className="row">
                             <div className="col-md">
                                 <form id="form-book" onSubmit={handleSubmitFormBooking}>
-                                    <h5>Jadwal Anda</h5>
-                                    <p>Tanggal : 12 Jun 2023 | 20:00 WIB <br />
-                                    Nama Dokter : <span className="text-carevul fw-bold">dr. Jakwan Bagung</span></p>
+                                    <h5 className='text-carevul'>Isi form di bawah ini yuk !</h5>
                                     <h6>Nama Lengkap :  </h6>
                                     <div className="input-group mb-3">
                                         <input type="text" className="form-control" placeholder="Masukkan Nama Lengkap" aria-label="Username" aria-describedby="basic-addon1" name="client_name" id="input-name" value={fullName} onChange={e => handleChangeFullName(e)} />

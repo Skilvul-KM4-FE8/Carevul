@@ -3,18 +3,19 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ChatItem } from "react-chat-elements";
 import { useNavigate } from "react-router-dom";
 import { RoomChatContext } from "../context/roomChatContext";
+import { RoomChatForDoctorContext } from "../context/roomChatForDoctor";
 
-const ChatItemList = ({ alt, title, subtitle, unread, id, avatar, data }) => {
+const ChatItemListForDoctor = ({ alt, title, subtitle, unread, id, avatar, data }) => {
   const navigate = useNavigate();
 
-  const { setRoomChat } = useContext(RoomChatContext);
+  const { setRoomChatDoctor } = useContext(RoomChatForDoctorContext);
 
   // navigate to chatroom
   const handleClickChatItem = () => {
     // e.preventDefault()
     console.log("data", data);
-    setRoomChat(data);
-    navigate(`/consult/chatroom/${id}`);
+    setRoomChatDoctor(data);
+    navigate(`/detaildoctor/${id}`);
   };
 
   return (
@@ -32,4 +33,4 @@ const ChatItemList = ({ alt, title, subtitle, unread, id, avatar, data }) => {
   );
 };
 
-export default ChatItemList;
+export default ChatItemListForDoctor;

@@ -24,27 +24,10 @@ function BasicExample() {
     console.log("logout Account");
   };
 
+  console.log(isLoggedIn);
+
   let component = "";
-  if (!isLoggedIn) {
-    component = (
-      <>
-        <div className="text-center ">
-          <NavLink
-            to={"/login"}
-            className="logindong btn text-carevul border-carevul m-1"
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to={"/register"}
-            className="btn color-carevul-gradient text-white m-1"
-          >
-            Register
-          </NavLink>
-        </div>
-      </>
-    );
-  } else {
+  if (isLoggedIn) {
     component = (
       <>
         <div className="text-center">
@@ -73,47 +56,62 @@ function BasicExample() {
           </Dropdown>
         </div>
       </>
-    );
+    )
+  } else {
+      component = (
+        <>
+          <div className="text-center ">
+            <NavLink
+              to={"/login"}
+              className="logindong btn text-carevul border-carevul m-1"
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to={"/regis"}
+              className="btn color-carevul-gradient text-white m-1"
+            >
+              Register
+            </NavLink>
+          </div>
+        </>
+      );
   }
 
   return (
-    <>
-      <Navbar bg="light" expand="lg" fluid>
-        <Container className="mx-auto">
-          <Navbar.Brand href="#">
-            <div className="logoApp">
-              <img src={CarevulLogo} alt="Carevul Logo" />{" "}
-            </div>{" "}
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto text-center">
-              <NavLink to={"/"} className="nav-link">
-                Home
-              </NavLink>
-              <NavLink to={"/paymentdoctor"} className="nav-link ">
-                Payment Test
-              </NavLink>
-              <NavLink to={"/listdoctor"} className="nav-link ">
-                List Doctor
-              </NavLink>
-              <NavLink to={"/articlehome"} className="nav-link ">
-                Artikel
-              </NavLink>
-              <NavLink to={"/bmicalculator"} className="nav-link ">
-                Kalkulator BMI
-              </NavLink>
-            </Nav>
-            <Nav className="ms-auto gap-1">
-              <div id="navbar-login-or-not">
-                {component}
-                {/* not login */}
-              </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <Navbar bg="light" expand="lg">
+      <Container className="mx-auto">
+        <Navbar.Brand href="#">
+          {" "}
+          <div className="logoApp">
+            <img src={CarevulLogo} alt="Carevul Logo" />{" "}
+          </div>{" "}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto text-center">
+            <NavLink to={"/"} className="nav-link">
+              Home
+            </NavLink>
+            {/* <NavLink to={"/paymentdoctor"} className="nav-link ">
+              Payment Test
+            </NavLink> */}
+            <NavLink to={"/consult/category"} className="nav-link ">
+              Konsultasi
+            </NavLink>
+            <NavLink to={"/articlehome"} className="nav-link ">
+              Artikel
+            </NavLink>
+            <NavLink to={"/bmicalculator"} className="nav-link ">
+              Kalkulator BMI
+            </NavLink>
+          </Nav>
+          <Nav className="ms-auto gap-1">
+           {component}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
