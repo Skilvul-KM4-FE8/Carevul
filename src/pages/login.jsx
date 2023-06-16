@@ -99,6 +99,15 @@ function Login() {
                     <span className="regis">Daftar Disini</span>
                   </Link>
                 </p>
+                <div>
+                <p className="fsize-15 d-block text-center">
+                  Kamu Dokter?
+                  <Link to={"/logindoctor"} style={{ textDecoration: "none" }}>
+                    <span className="regis">Login disini yuk!</span>
+                  </Link>
+                </p>
+
+                </div>
               </div>
             </div>
           </div>
