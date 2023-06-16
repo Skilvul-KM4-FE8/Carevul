@@ -1,6 +1,7 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/article-home.css";
 import ArticleCardLanding from "../components/ArticleCardLanding";
+import { Link } from "react-router-dom";
 
 const ArticleLanding = () => {
   return (
@@ -20,7 +21,7 @@ const ArticleLanding = () => {
         </Container>
       </section>
       <div className="text-center">
-        <button className="logindong main-button">Artikel Lainnya</button>
+        <Link to={"/articlehome"} className="logindong main-button">Artikel Lainnya</Link>
       </div>
     </>
   );
