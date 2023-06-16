@@ -37,6 +37,7 @@ p {
   color: #3f4344;
   line-height: 15px;
 }
+
 /* For Footer */
 .text-carevul {
   color: #296fde;
@@ -48,6 +49,12 @@ p {
 
 .text-gray {
   color: #333333;
+}
+
+.text-gray p {
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .social-media {
@@ -68,6 +75,7 @@ p {
 .text-light-gray {
   color: #5f6d7e;
 }
+
 /* Resopnsive CSS */
 
 /* Tablates */
