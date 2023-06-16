@@ -8,7 +8,7 @@ import ReadMore1 from "../components/Read-More/readmore1";
 function ArticleStress() {
   const [datas, setData] = useState([])
 
-   useEffect(() => {
+  useEffect(() => {
     axios(
       "https://6480432af061e6ec4d48ebcc.mockapi.io/article-home?page=6&limit=1"
       ).then(result => setData(result.data))

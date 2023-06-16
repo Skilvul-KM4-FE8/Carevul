@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { AiOutlineCloudSync } from "react-icons/ai";
+import { FiRefreshCcw } from "react-icons/fi";
 
 const RoomChat = () => {
   const { roomChat } = useContext(RoomChatContext);
@@ -50,7 +51,7 @@ const RoomChat = () => {
   };
 
   const handleRefreshChat = async () => {
-    const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
+    const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
     setChatData(roomWithChats?.chats);
   };
 
@@ -60,7 +61,7 @@ const RoomChat = () => {
       <div className="col ">
         <div id="chatroom-box">
           {chatData.map((item, index) => (
-            <MessageBox
+            <MessageBox key={index}
             {...console.log(item)}
               position={(item.userId === loggedUser.id) ? "right" : "left"}
               // title={item.message}
@@ -89,7 +90,7 @@ const RoomChat = () => {
               </div>
               <div >
                 <button className="btn color-carevul-gradient"><RiSendPlaneLine className="fs-2" /></button>
-                <span className="btn btn-secondary" onClick={handleRefreshChat}><AiOutlineCloudSync className="text-carevul fs-2" /></span>
+                <span className="btn btn-secondary" onClick={handleRefreshChat}><FiRefreshCcw className="text-carevul fs-2" /></span>
               </div>
             </form>
           </div>
