@@ -12,8 +12,6 @@ const ChatItemListForDoctor = ({ alt, title, subtitle, unread, id, avatar, data 
 
   // navigate to chatroom
   const handleClickChatItem = () => {
-    // e.preventDefault()
-    console.log("data", data);
     setRoomChatDoctor(data);
     navigate(`/detaildoctor/${id}`);
   };
