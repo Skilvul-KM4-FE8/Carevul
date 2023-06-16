@@ -18,11 +18,11 @@ const CategoryDoctor = () => {
   return (
     <>
       <section id="card" className="category-card">
-        <Container fluid>
+        <div className="container" >
           <div id="card-row" className="row justify-content-center">
             <CardCategory />
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );
