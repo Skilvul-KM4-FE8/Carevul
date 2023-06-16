@@ -85,10 +85,10 @@ const RoomChat = () => {
         <div className="container-fluid">
           <div className="row">
             <form className="d-flex justify-content-between align-items-center" onSubmit={(e) => handleSubmitForm(e)}>
-              <div >
+              <div className="col-11">
                 <Input placeholder="Type here..." type="text" value={inputChat} onChange={(e) => setInputChat(e.target.value)} /> 
               </div>
-              <div >
+              <div className="col-1 d-flex justify-content-end">
                 <button className="btn color-carevul-gradient"><RiSendPlaneLine className="fs-2" /></button>
                 <span className="btn btn-secondary" onClick={handleRefreshChat}><FiRefreshCcw className="text-carevul fs-2" /></span>
               </div>

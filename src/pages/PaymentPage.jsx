@@ -73,14 +73,14 @@ const PaymentPage = () => {
                         <Row>
                             <Col>
                                 {/* Card Doctor's Info */}
-                                <Container className="shadow py-3 px-5 rounded">
+                                <Container fluid className="shadow py-3 px-5 rounded">
                                     <Row>
-                                        <Col className="d-flex justify-content-center align-items-center">
+                                        <Col sm={5} className="d-flex justify-content-center align-items-center">
                                         <img src={doctor.image} alt="doctor" className="rounded-circle" width={100} />
                                         </Col>
-                                        <Col className="text-start mb-3" md={7} >
-                                        <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">dr. {doctor.name}</h4>
-                                        <p className=" doctor-name">Dokter {doctor.kategori} <br /> {doctor.instansi}</p>
+                                        <Col className="text-start mb-3" sm={7} >
+                                        <h4 className="text-carevul fw-bold ms-0 mt-2 doctor-name mt-n1">{doctor.name}</h4>
+                                        <p className=" doctor-name">Dokter {doctor.kategori} <br /><br /> {doctor.instansi}</p>
                                         <h5 className=" doctor-name">  <span className="text-carevul ">Rp. 20000</span></h5>
                                         </Col>
                                         <Col className="d-flex justify-content-center align-items-center">
