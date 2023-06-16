@@ -6,6 +6,7 @@ import Pict1 from "../assets/pict1.png";
 import Pict2 from "../assets/pict2.png";
 import { Container, Row } from "react-bootstrap";
 import ArticleLanding from "../pages/ArticleLanding";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -24,9 +25,9 @@ const Landing = () => {
               <br /> Gratis! dimanapun dan kapanpun. Segera hubungi dokter
               pilihanmu di Carevul!
             </p>
-            <button className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3">
+            <Link to={"/consult/category"} className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3">
               Lebih Lanjut
-            </button>
+            </Link>
           </div>
           <div className="hero-image">
             <img src={Pict1} className="Character" alt="" />
