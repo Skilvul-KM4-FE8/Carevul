@@ -37,7 +37,7 @@ const footer = () => {
                 <a href="https://www.linkedin.com" target="_blank">
                   <img src={lin} alt="" />
                 </a>
-                <a href="https://www.youtube.com" target="_blank">
+                <a href="https://www.facebook.com" target="_blank">
                   <img src={yt} alt="" />
                 </a>
               </div>

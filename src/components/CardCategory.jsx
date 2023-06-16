@@ -18,7 +18,7 @@ function CardCategory() {
     <>
             {cards.map(item => (
               <Col md={3} key={item.id} id="col-card">
-                  <Link to={`/consult/category/${item.link}`} key={item.id}>
+                  <Link to={`/consult/category/${item.link}`} key={item.id} fluid>
                   <div>
                     <Card className="card" id="card">
                       <div id="gradient-bg"></div>
