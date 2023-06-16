@@ -18,8 +18,7 @@ const RoomChat = () => {
   useEffect(() => {
     const getChatData = async () => {
       if (roomChat) {
-        const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
-        console.log(roomWithChats);
+        const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
         setChatData(roomWithChats?.chats);
       }
     };
@@ -32,7 +31,7 @@ const RoomChat = () => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    await fetch(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`, {
+    await fetch(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`, {
       method: "POST",
       headers: {
         Accept: "*/*",
@@ -46,12 +45,12 @@ const RoomChat = () => {
 
     setInputChat("");
 
-    const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
+    const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
     setChatData(roomWithChats?.chats);
   };
 
   const handleRefreshChat = async () => {
-    const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
+    const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`).then((res) => res.data);
     setChatData(roomWithChats?.chats);
   };
 
@@ -62,7 +61,6 @@ const RoomChat = () => {
         <div id="chatroom-box">
           {chatData.map((item, index) => (
             <MessageBox key={index}
-            {...console.log(item)}
               position={(item.userId === loggedUser.id) ? "right" : "left"}
               // title={item.message}
               type="text"
@@ -71,14 +69,7 @@ const RoomChat = () => {
               replyButton={true}
             />
           ))}
-          {/* <MessageBox
-                    position='right'
-                    title='Burhan'
-                    type='text'
-                    text="Hi there !"
-                    date={new Date()}
-                    replyButton={true}
-                /> */}
+
         </div>
       </div>
       <div className="col">

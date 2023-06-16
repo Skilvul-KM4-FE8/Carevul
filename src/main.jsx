@@ -2,12 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,16 +25,16 @@ import BmiCalculator from "./pages/BmiCalculator";
 
 import Login from "./pages/login";
 import Register from "./pages/Register";
-import ListDoctor from "./pages/ListDoctor.jsx";
+import ListDoctor from "./components/ListDoctor.jsx";
 import Layout from "./components/Layout.jsx";
 
 // impoort outlet
 import Landing from "./components/Landing";
-import ConsultRoom from "./pages/ConsultRoom";
-import CategoryDoctor from "./pages/CategoryDoctor";
+import ConsultRoom from "./components/ConsultRoom";
+import CategoryDoctor from "./components/CategoryDoctor";
 import LoginDoctor from "./pages/LoginDoctor";
 import RegisterDoctor from "./pages/RegisterDoctor";
-import RoomChat from "./pages/RoomChat";
+import RoomChat from "./components/RoomChat";
 import RoomChatProvider from "./context/roomChatContext";
 
 // import payment
@@ -49,7 +44,7 @@ import BookingPage from "./pages/BookingPage";
 import Consult from "./pages/Consult";
 import DetailDoctor from "./pages/DetailDoctor";
 import RoomChatForDoctorProvider from "./context/roomChatForDoctor";
-import RoomChatDoctor from "./pages/RoomChatDoctor";
+import RoomChatDoctor from "./components/RoomChatDoctor";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

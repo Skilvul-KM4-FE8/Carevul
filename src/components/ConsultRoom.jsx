@@ -17,7 +17,6 @@ const ConsultRoom = () => {
 
   // get data logged user from localstorage
   const loggedUser = JSON.parse(localStorage.getItem("idUser"));
-  // console.log(loggedUser.id);
 
   useEffect(() => {
     const getBookedDoctors = async () => {
@@ -29,26 +28,10 @@ const ConsultRoom = () => {
         return { ...room, doctor, idUser: loggedUser.id, idDoctor: doctor.id };
       });
 
-      console.log({ chatRooms });
       setAvailableChatRooms(chatRooms);
     };
     getBookedDoctors();
   }, []);
-
-  // useEffect(() => {
-  //   if (availableChatRooms) {
-  //     let tempChat = [];
-  //     availableChatRooms.forEach((doctor) => {
-  //       fetch(`https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor/${doctor.doctorId}`)
-  //         .then((response) => response.json())
-  //         .then((data) => {
-  //           tempChat.push({ ...data, idDoctor: doctor.id, idUser: loggedUser.id });
-  //         })
-  //         .catch((err) => console.log(err));
-  //     });
-  //     setChatList(tempChat);
-  //   }
-  // }, [availableChatRooms]);
 
   return (
     <>
@@ -77,23 +60,23 @@ const ConsultRoom = () => {
               <div className="col-4">
                 <section id="chatListRoom">
                   <div className="container-fluid">
-                      {availableChatRooms.map((roomData) => (
-                        <Row key={roomData.id}>
-                          <div className="col">
-                            <ChatItemList
-                              key={roomData.id}
-                              avatar={roomData.doctor.image}
-                              alt={roomData.doctor.email}
-                              title={roomData.doctor.name}
-                              subtitle={roomData.doctor.instansi}
-                              date={new Date()}
-                              unread={0}
-                              id={roomData.id}
-                              data={roomData}
-                              />
-                          </div>
-                        </Row>
-                      ))}
+                    {availableChatRooms.map((roomData) => (
+                      <Row key={roomData.id}>
+                        <div className="col">
+                          <ChatItemList
+                            key={roomData.id}
+                            avatar={roomData.doctor.image}
+                            alt={roomData.doctor.email}
+                            title={roomData.doctor.name}
+                            subtitle={roomData.doctor.instansi}
+                            date={new Date()}
+                            unread={0}
+                            id={roomData.id}
+                            data={roomData}
+                          />
+                        </div>
+                      </Row>
+                    ))}
                   </div>
                 </section>
               </div>

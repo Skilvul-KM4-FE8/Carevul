@@ -21,9 +21,6 @@ const PaymentPage = () => {
 
     // localStorage.setItem("idUser", result[0].id)
     const loginUser = JSON.parse(localStorage.getItem("idUser"));
-    console.log(loginUser)
-
-    console.log(param.id)
 
     useEffect(() => {
         fetch(`https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor/${param.id}`)
@@ -36,25 +33,21 @@ const PaymentPage = () => {
 
     const handleRadioChange = (event) => {
         setRadioVal(event.target.value);
-        console.log(radioVal)
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // const idBooking = Math.random();
-        // console.log(radioVal)
+
         setPayment({
             idDoctor: param.id,
             // bookingId: idBooking,
             price: 20000,
             paymentMethod: radioVal,
         }); 
-        // console.log(payment)
         navigate("/bookingpage");
     };
     
     useEffect(() => {
-        console.log(payment)
     }, [payment]);
 
     return (

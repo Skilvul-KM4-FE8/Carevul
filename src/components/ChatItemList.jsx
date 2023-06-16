@@ -12,7 +12,6 @@ const ChatItemList = ({ alt, title, subtitle, unread, id, avatar, data }) => {
   // navigate to chatroom
   const handleClickChatItem = () => {
     // e.preventDefault()
-    console.log("data", data);
     setRoomChat(data);
     navigate(`/consult/chatroom/${id}`);
   };

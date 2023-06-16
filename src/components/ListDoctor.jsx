@@ -13,23 +13,19 @@ const ListDoctor = () => {
 
   let query = ""
 
-  console.log(param.id)
 
   if (param.id == "semua_dokter") {
     query = "https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor"
   } else {
     query = `https://6487fbcf0e2469c038fcbc44.mockapi.io/doctor?kategori=${param.id}`
-    // query = "?kategori=" + param.id
   }
 
   useEffect(() => {
-    // fetch("https://64506b72a3221969114a2d25.mockapi.io/doctors")
     if (query) {
-      console.log(query)
+
     fetch(query)
       .then((response) => response.json())
       .then((data) => setDoctors(data));
-      console.log(doctors)
     }
   }, []);
 
@@ -47,7 +43,6 @@ const ListDoctor = () => {
         {
           doctors.map((doctor) => (
             <Row key={doctor.id}>
-                  {console.log(doctor)}
                   <Col>
                     {/* <div className="shadow-sm"> */}
                     <div className="shadow py-3 px-5 rounded container-fluid">

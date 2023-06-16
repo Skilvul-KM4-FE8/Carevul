@@ -15,12 +15,6 @@ const BookingPage = () => {
     // For get data login from localstorage
     const loginData = JSON.parse(localStorage.getItem("idUser"))
 
-    
-
-    console.log(fullName)
-    console.log(complaint)
-    console.log(payment)
-
     const handleChangeFullName = (e) => {
         setFullName(e.target.value)
         setPayment({
@@ -29,7 +23,7 @@ const BookingPage = () => {
             idUser: loginData.id,
             complaint: complaint
         })
-        console.log(fullName)
+
     }
 
     const handleChangeComplaint = (e) => {
@@ -40,7 +34,7 @@ const BookingPage = () => {
             userName: fullName,
             complaint: e.target.value
         })
-        console.log(payment)
+
     }
 
     const handleSubmitFormBooking = (e) => {
@@ -88,20 +82,12 @@ const BookingPage = () => {
         navigate("/listdoctor")
     }
 
-        // // show allert for success
-        // alert('Booking berhasil dilakukan')
-        
     }
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    useEffect(() => {
-        console.log(payment)
-    }, [payment])
-
 
     return (
         <>

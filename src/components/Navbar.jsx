@@ -7,24 +7,13 @@ import { Container, Button, Dropdown } from "react-bootstrap";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 
 function BasicExample() {
-  // Ubah status Login di navbar
-  // const sessionName = sessionStorage.getItem("name");
-  // const sessionEmail = sessionStorage.getItem("email");
-  // const sessionId = sessionStorage.getItem("id");
-  // const navbarLoginOrNot = document.querySelector("#navbar-login-or-not");
-
-  // get data logged user from local storage
 
   const isLoggedIn = JSON.parse(localStorage.getItem("idUser")); // // true or false
-  console.log(isLoggedIn);
 
   const handleLogout = () => {
     localStorage.removeItem("idUser");
     window.location.reload();
-    console.log("logout Account");
   };
-
-  console.log(isLoggedIn);
 
   let component = "";
   if (isLoggedIn) {

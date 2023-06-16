@@ -19,8 +19,7 @@ const RoomChatDoctor = () => {
     useEffect(() => {
         const getChatData = async () => {
             if (roomChatDoctor) {
-                const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
-                console.log(roomWithChats);
+                const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
                 setChatData(roomWithChats?.chats);
             }
         };
@@ -33,7 +32,7 @@ const RoomChatDoctor = () => {
 
     const handleSubmitForm = async (e) => {
         e.preventDefault();
-        await fetch(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`, {
+        await fetch(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`, {
             method: "POST",
             headers: {
                 Accept: "*/*",
@@ -47,12 +46,12 @@ const RoomChatDoctor = () => {
 
         setInputChat("");
 
-        const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
+        const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
         setChatData(roomWithChats?.chats);
     };
             
     const handleRefreshChat = async () => {
-        const roomWithChats = await axios.get(`http://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
+        const roomWithChats = await axios.get(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChatDoctor?.id}`).then((res) => res.data);
         setChatData(roomWithChats?.chats);
     };
 
@@ -64,7 +63,6 @@ const RoomChatDoctor = () => {
                 <div id="chatroom-box">
                     {chatData.map((item, index) => (
                         <MessageBox
-                            {...console.log(item)}
                             position={(item.userId === loggedDoctor.id) ? "right" : "left"}
                             // title={item.message}
                             type="text"
