@@ -43,14 +43,14 @@ const footer = () => {
                     Home
                   </Link>
                   <Link
-                    to="./../article/article.html"
+                    to="/articlehome"
                     className="fw-normal text-gray"
                   >
                     Artikel
                   </Link>
 
                   <Link
-                    to="./../bmi-calculator/index.html"
+                    to="/bmicalculator"
                     className="fw-normal text-gray"
                   >
                     Kalkulator BMI
