@@ -174,7 +174,7 @@ const PaymentPage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Outlet />bias 
+            <Outlet />
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./../styles/loginregis.css";
 import regisLogo from "./../assets/register.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -10,22 +10,26 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
     let res = await axios.get("https://6454b891f803f345762f6469.mockapi.io/users");
     let data = await res.data;
 
-    const ambilData = () => {
+    const ambilData = async() => {
       const result = [];
       for (let i = 0; i < data.length; i++) {
         if (data[i].email == email) {
-          result.push(data[i]);
+          await result.push(data[i]);
         }
       }
 
-      if (result < 1) {
-        axios
+      console.log(result);
+
+      if (result == 0) {
+        await axios
           .post("https://6454b891f803f345762f6469.mockapi.io/users", {
             name: name,
             email: email,
