@@ -1,9 +1,0 @@
-#chatroom-box {
-    height: 80vh;
-    overflow: scroll;
-}
-
-#chatListRoom {
-    height: 100%;
-    overflow: scroll;
-}
