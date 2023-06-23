@@ -13,19 +13,20 @@ const footer = () => {
       <div className="bg-color-footer mt-5 stroke-card-border shadow-sm">
         <div className="container ">
           <div className="row d-flex justify-content-between pt-4 pb-3">
-            <div className="col-mb-5 col-4 mt ">
+            <div className="col-mb-5 col-md-4 mt">
               <img src={carevulLogo} alt="" />
-              <div className="text-gray mb-4">
+              <div className="text-gray  mb-4">
                 <p>
                   Kamu lagi sakit?
-                  <span className="text-carevul fw-bolder">&nbsp;Carevul </span>{" "}
+                  <span className="text-carevul fw-bolder"> Carevul</span>{" "}
+                  {/* <span className="text-carevul fw-bolder"> Carevul </span> */}
                   solusinya,
                   <br />
                   tanpa antri, tanpa ribet, konsulin aja!
                 </p>
               </div>
 
-              <div className=" social-media d-flex justify-content-between">
+              <div className=" social-media d-flex justify-content-between mb-5">
                 <img src={fb} alt="" />
                 <img src={ins} alt="" />
                 <img src={twi} alt="" />
@@ -34,36 +35,27 @@ const footer = () => {
               </div>
             </div>
 
-            <div className="col-lg col-7">
-
+            <div className="col-lg-2 my-3 mb-md-2 ">
               <div className="list-footer flex-column d-flex justify-content-around">
                 <div className="d-flex flex-column  gap-2">
-              <h5 className="text-carevul">Site Map</h5>
+                  <h5 className="text-carevul">Site Map</h5>
                   <Link to="/" className="fw-normal text-gray">
                     Home
                   </Link>
-                  <Link
-                    to="/articlehome"
-                    className="fw-normal text-gray"
-                  >
+                  <Link to="/articlehome" className="fw-normal text-gray">
                     Artikel
                   </Link>
 
-                  <Link
-                    to="/bmicalculator"
-                    className="fw-normal text-gray"
-                  >
+                  <Link to="/bmicalculator" className="fw-normal text-gray">
                     Kalkulator BMI
                   </Link>
-                
                 </div>
               </div>
             </div>
-            <div className="col-lg col-7 ">
-
+            <div className="col-lg-2 my-3 mb-md-2 ">
               <div className="list-footer ">
                 <div className="d-flex flex-column  gap-2 ">
-              <h5 className="text-carevul">Lainnya</h5>
+                  <h5 className="text-carevul">Lainnya</h5>
                   <Link to="" className="fw-normal  text-gray">
                     Syarat & Ketentuan
                   </Link>
@@ -76,14 +68,13 @@ const footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg col-7 ">
-
+            <div className="col-lg-2 my-3  mb-md-2">
               <div className="list-footer">
-                <div className="fw-4 d-flex flex-column gap-2">
+                <div className="fw-2 d-flex flex-column gap-2">
                   <h5 className="text-carevul ">Kontak Kami</h5>
-                  
+
                   <span className="fw-normal">Carevul@help.com </span>
-                  
+
                   <span>Sumatra, Indonesia</span>
                   <span>0822-8903-9601</span>
                 </div>
@@ -92,7 +83,9 @@ const footer = () => {
           </div>
           <hr />
           <div className="d-flex justify-content-center align-items-center ">
-            <div className="d-flex justify-content-center align-items-center ">Copyright © 2023 Carevul</div>
+            <div className="d-flex justify-content-center align-items-center ">
+              Copyright © 2023 Carevul
+            </div>
           </div>
         </div>
       </div>

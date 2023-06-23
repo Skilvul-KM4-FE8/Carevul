@@ -11,11 +11,10 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <>
-      
       <section className="mt-0 hero">
         <div className="hero-container d-flex justify-content-space-between m-3 mt-0">
           <div className="hero-text ">
-            <h1 >
+            <h1>
               Selamat Datang
               <br />
               di Carevul!
@@ -25,7 +24,10 @@ const Landing = () => {
               <br /> Gratis! dimanapun dan kapanpun. Segera hubungi dokter
               pilihanmu di Carevul!
             </p>
-            <Link to={"/consult/category"} className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3">
+            <Link
+              to={"/consult/category"}
+              className="logindong btn text-carevul border-carevul text-color-carevul bg-white mt-3"
+            >
               Lebih Lanjut
             </Link>
           </div>
@@ -80,8 +82,8 @@ const Landing = () => {
         </div>
 
         <section className="introduction">
-          <div className="a-container">
-            <div className="card-introduction d-flex align-center">
+          <div className="a-container ">
+            <div className="card-introduction d-flex align-center justify-center">
               <img src={Pict2} className="Character2" alt="" />
               <div className="desc">
                 <h2>Kenalan sama kita yuk!</h2>
@@ -107,7 +109,6 @@ const Landing = () => {
           <ArticleLanding />
         </section>
       </div>
-      
     </>
   );
 };
