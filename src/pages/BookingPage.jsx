@@ -4,10 +4,13 @@ import { PaymentContext } from '../context/paymentContext'
 import { Button, Modal } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { BookingContext } from '../context/bookingContext'
 
 const BookingPage = () => {
-    const [fullName, setFullName] = useState('')
-    const [complaint, setComplaint] = useState('')
+    // const [fullName, setFullName] = useState('')
+    // const [complaint, setComplaint] = useState('')
+
+    const {fullName, setFullName, complaint, setComplaint} = useContext(BookingContext)
 
     const {payment, setPayment} = useContext(PaymentContext)
 
