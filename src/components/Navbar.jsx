@@ -1,6 +1,6 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import CarevulLogo from "../assets/carevul-logo.svg";
 import "./../styles/Navbar.css";
 import { Container, Button, Dropdown } from "react-bootstrap";
@@ -9,6 +9,8 @@ import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 function BasicExample() {
 
   const isLoggedIn = JSON.parse(localStorage.getItem("idUser")); // // true or false
+
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("idUser");
@@ -28,7 +30,7 @@ function BasicExample() {
                 <img
                   height={50}
                   className="text-center justify-center"
-                  src={isLoggedIn.img}
+                  src={isLoggedIn.img} 
                 />
 
                 <h5 className="ms-auto text-center">{isLoggedIn.name}</h5>
@@ -72,7 +74,7 @@ function BasicExample() {
       <Container className="mx-auto">
         <Navbar.Brand href="#">
           {" "}
-          <div className="logoApp">
+          <div className="logoApp" onClick={() => navigate("/")}>
             <img src={CarevulLogo} alt="Carevul Logo" />{" "}
           </div>{" "}
         </Navbar.Brand>
