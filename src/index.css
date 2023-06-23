@@ -1,12 +1,9 @@
 .text-carevul {
-  color: #4B74F8 !important;
+  color: #4b74f8 !important;
 }
 
 .border-carevul {
-  /* color: #3655D5; */
-
-  /* border: 1px solid #3655D5 !important; */
-  border-color: #4B74F8 !important;
+  border: 1px solid #3655d5 !important;
 }
 
 .color-carevul-gradient {
