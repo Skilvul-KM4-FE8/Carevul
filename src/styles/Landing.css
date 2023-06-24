@@ -414,6 +414,10 @@ footer hr {
   .hero-text {
     margin: 0;
   }
+  .a-container {
+    padding: 0;
+    margin: 0 auto;
+  }
 }
 
 /* Mobiles */
@@ -425,5 +429,9 @@ footer hr {
   .hero-text {
     margin-top: 40px !important;
     margin-left: 20px !important;
+  }
+  .a-container {
+    padding: 0;
+    margin: 0 auto;
   }
 }
