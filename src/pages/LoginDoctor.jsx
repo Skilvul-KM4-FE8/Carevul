@@ -51,13 +51,13 @@ function LoginDoctor() {
       <div className="login-left h-100">
         <div className="row justify-content-center align-items-center h-100">
           <div className="col-7">
-            <div className="header">
+            <div className="header" data-aos="fade-right" data-aos-duration="1000">
               <h1>Hallo, Dokter</h1>
               <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
             </div>
             <div className="login-form">
 
-              <form id="form-login" onSubmit={handleLogin}>
+              <form id="form-login" onSubmit={handleLogin} data-aos="fade-right" data-aos-duration="1000">
                 <label htmlFor="email" className="form-label">Email</label>
                 <input type="email" className="form-control" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Masukkan Email" />
 
@@ -66,7 +66,7 @@ function LoginDoctor() {
 
                 <button className="btn-2" type="submit">Login</button>
               </form>
-              <p className="fsize-15 d-block text-center">
+              <p className="fsize-15 d-block text-center" data-aos="fade-right" data-aos-duration="1000">
                 Kamu belum punya akun?
                 <Link to={"/regisdoctor"} style={{ textDecoration: "none" }}>
                 <span className="regis">Daftar Disini</span>
