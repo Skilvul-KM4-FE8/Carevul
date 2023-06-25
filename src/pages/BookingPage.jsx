@@ -3,10 +3,14 @@ import './../styles/bookingpage.css'
 import { PaymentContext } from '../context/paymentContext'
 import { Button, Modal } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import { BookingContext } from '../context/bookingContext'
 
 const BookingPage = () => {
-    const [fullName, setFullName] = useState('')
-    const [complaint, setComplaint] = useState('')
+    // const [fullName, setFullName] = useState('')
+    // const [complaint, setComplaint] = useState('')
+
+    const {fullName, setFullName, complaint, setComplaint} = useContext(BookingContext)
 
     const {payment, setPayment} = useContext(PaymentContext)
 
@@ -70,8 +74,19 @@ const BookingPage = () => {
             )
         })
         .then(res => res.json())
-        .then(alert('Booking berhasil dilakukan'))
-        .then(navigate('/consult/chatroom'))
+        // .then(alert('Booking berhasil dilakukan'))
+        .then(res => {
+            new Swal(
+                "Success!",
+                "Booking berhasil dilakukan",
+                "success",
+                {
+                    timer: 3000,
+                },
+                navigate('/consult/chatroom')
+            );
+        })
+        // .then(navigate('/consult/chatroom'))
 
 
         // clear payment
@@ -140,7 +155,7 @@ const BookingPage = () => {
                                             (loginData) ?
                                                 <button id="btn-confirm" className="btn color-carevul-gradient text-white" type="submit" name="confirm">Konfirmasi</button>
                                             :
-                                            <div className='btn color-carevul-gradient text-black' onClick={handleShow}>
+                                            <div className='btn color-carevul-gradient text-white' onClick={handleShow}>
                                                 Konfirmasi
                                             </div>
                                         }

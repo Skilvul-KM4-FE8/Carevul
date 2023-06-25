@@ -45,6 +45,7 @@ import Consult from "./pages/Consult";
 import DetailDoctor from "./pages/DetailDoctor";
 import RoomChatForDoctorProvider from "./context/roomChatForDoctor";
 import RoomChatDoctor from "./components/RoomChatDoctor";
+import BookingProvider from "./context/bookingContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -101,10 +102,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RoomChatForDoctorProvider>
       <RoomChatProvider>
-        <PaymentProvider>
-          {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
-          <RouterProvider router={router} />
-        </PaymentProvider>
+        <BookingProvider>
+          <PaymentProvider>
+            {/* Semua Router yang kita buat di atas,  nanti bakalan di load di Router Provider di bawah ini */}
+            <RouterProvider router={router} />
+          </PaymentProvider>
+        </BookingProvider>
       </RoomChatProvider>
     </RoomChatForDoctorProvider>
   </React.StrictMode>
