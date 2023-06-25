@@ -4,8 +4,18 @@ import { Card } from "react-bootstrap";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/article-home.css";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
 function Cardticle() {
   const [cards, setCard] = useState([]);
+  
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+  
 
   useEffect(() => {
     axios("https://6480432af061e6ec4d48ebcc.mockapi.io/article-home").then((result) => setCard(result.data));
@@ -16,8 +26,8 @@ function Cardticle() {
       {cards.map((item) => (
         <Col lg={{ span: 4, offset: 0 }} key={item.id} id="col-card">
           {/* </Col><Col md={4} key={item.id} id="col-card"> */}
-          <div>
-            <Card className="card" id="card">
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <Card className="card" id="card"  >
               <Card.Img variant="top" src={item.img} id="card-img" />
               <Card.Body className="card-body">
                 <Card.Title className="card-title">{item.title}</Card.Title>
