@@ -8,11 +8,25 @@ import { Container, Row } from "react-bootstrap";
 import ArticleLanding from "../pages/ArticleLanding";
 import { Link } from "react-router-dom";
 
+// Aos
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Landing = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <section className="mt-0 hero">
-        <div className="hero-container d-flex justify-content-space-between m-3 mt-0">
+        <div
+          className="hero-container d-flex justify-content-space-between m-3 mt-0"
+          data-aos="zoom-in-down"
+          data-aos-duration="2000"
+        >
           <div className="hero-text ">
             <h1>
               Selamat Datang
@@ -31,7 +45,11 @@ const Landing = () => {
               Lebih Lanjut
             </Link>
           </div>
-          <div className="hero-image">
+          <div
+            className="hero-image"
+            data-aos="zoom-in-up"
+            data-aos-duration="5000"
+          >
             <img src={Pict1} className="Character" alt="" />
           </div>
         </div>
@@ -44,7 +62,11 @@ const Landing = () => {
           <h1 className="a-text d-flex mt-5">Pelayanan kami</h1>
           <div className="container-fluid mb-4">
             <Row className="gap-5 justify-content-center">
-              <div className="col-md-3 ">
+              <div
+                className="col-md-3"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Online} alt="" />
@@ -55,7 +77,11 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 ">
+              <div
+                className="col-md-3"
+                data-aos="zoom-in-up"
+                data-aos-duration="1000"
+              >
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={History} alt="" />
@@ -66,7 +92,11 @@ const Landing = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-md-3 ">
+              <div
+                className="col-md-3"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
                 <div className="item-service">
                   <div className="card-service d-flex flex-column align-items-center justify-content-center">
                     <img src={Doctor} alt="" />
@@ -81,7 +111,11 @@ const Landing = () => {
           </div>
         </div>
 
-        <section className="introduction">
+        <section
+          className="introduction"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <div className="a-container ">
             <div className="card-introduction d-flex align-center justify-center">
               <img src={Pict2} className="Character2" alt="" />

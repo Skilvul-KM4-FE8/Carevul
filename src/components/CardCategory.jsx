@@ -5,8 +5,16 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import "./../styles/category-doctor.css";
 import { Link } from "react-router-dom";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function CardCategory() {
   const [cards, setCard] = useState([])
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     axios(
@@ -17,7 +25,7 @@ function CardCategory() {
   return (
     <>
             {cards.map(item => (
-              <Col md={3} key={item.id} id="col-card">
+              <Col md={3} key={item.id} id="col-card" data-aos="zoom-in" data-aos-duration="1000">
                   <Link to={`/consult/category/${item.link}`} key={item.id} fluid>
                   <div>
                     <Card className="card" id="card">

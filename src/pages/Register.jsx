@@ -62,7 +62,7 @@ function Register() {
   return (
     <div>
       <section className="login d-flex">
-        <div className="login-left h-100">
+        <div className="login-left h-100"  data-aos="fade-right" data-aos-duration="1000">
           <div className="row justify-content-center align-items-center h-100">
             <div className="col-7">
               <div className="header">
