@@ -19,7 +19,7 @@ function ArticleCardLanding() {
       {cards.map((item) => (
         <Col lg={{ span: 4, offset: 0 }} key={item.id} id="col-card">
           {/* </Col><Col md={4} key={item.id} id="col-card"> */}
-          <div>
+          <div data-aos="fade-right" data-aos-duration="3000">
             <Card className="card" id="card">
               <Card.Img variant="top" src={item.img} id="card-img" />
               <Card.Body className="card-body">
