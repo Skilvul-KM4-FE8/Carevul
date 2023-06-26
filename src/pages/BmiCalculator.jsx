@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactDOM } from "react";
 import { useState } from "react";
 import underImage from "../assets/under.jpg";
@@ -7,11 +7,18 @@ import overImage from "../assets/over.jpg";
 import obsesImage from "../assets/obses.jpg";
 import "./../styles/bmi-calculator.css";
 
+import AOS from "aos";
+
 function BmiCalculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState("");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   let calculatebmi = (event) => {
     event.preventDefault();
@@ -50,7 +57,7 @@ function BmiCalculator() {
   }
   return (
     <div className="app">
-      <div className="container-bmi">
+      <div className="container-bmi" data-aos="zoom-in" data-aos-duration="1000">
         <h3 id="title-bmi">Kalkulator BMI</h3>
         <p id="desc-bmi">Untuk menghitung BMI, masukkan tinggi badan<br></br> dan berat badan kamu yuk!</p>
         <form onSubmit={calculatebmi} id="form-bmi">
@@ -69,13 +76,13 @@ function BmiCalculator() {
             Muat Ulang
           </button>
         </form>
-        <div className="center">
-          <h3 className="center" id="result">
+        <div className="center" >
+          <h3 className="center" id="result" data-aos="zoom-in" data-aos-duration="1000">
             BMI Kamu : {bmi}
             <p className="center" id="message">{message}</p>
           </h3>
         </div>
-        <div className="img-container-bmi">
+        <div className="img-container-bmi" data-aos="zoom-in" data-aos-duration="1000">
           <img src={imgsrc} alt="" />
         </div>
       </div>

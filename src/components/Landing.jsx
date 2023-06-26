@@ -24,10 +24,10 @@ const Landing = () => {
       <section className="mt-0 hero">
         <div
           className="hero-container d-flex justify-content-space-between m-3 mt-0"
-          data-aos="zoom-in-down"
-          data-aos-duration="2000"
+          
         >
-          <div className="hero-text ">
+          <div className="hero-text " data-aos="fade-up"
+          data-aos-duration="2000">
             <h1>
               Selamat Datang
               <br />
@@ -47,8 +47,7 @@ const Landing = () => {
           </div>
           <div
             className="hero-image"
-            data-aos="zoom-in-up"
-            data-aos-duration="5000"
+            
           >
             <img src={Pict1} className="Character" alt="" />
           </div>
@@ -64,7 +63,7 @@ const Landing = () => {
             <Row className="gap-5 justify-content-center">
               <div
                 className="col-md-3"
-                data-aos="fade-left"
+                data-aos="zoom-in"
                 data-aos-duration="1000"
               >
                 <div className="item-service">
@@ -79,7 +78,7 @@ const Landing = () => {
               </div>
               <div
                 className="col-md-3"
-                data-aos="zoom-in-up"
+                data-aos="zoom-in"
                 data-aos-duration="1000"
               >
                 <div className="item-service">
@@ -94,7 +93,7 @@ const Landing = () => {
               </div>
               <div
                 className="col-md-3"
-                data-aos="fade-right"
+                data-aos="zoom-in"
                 data-aos-duration="1000"
               >
                 <div className="item-service">

@@ -11,12 +11,19 @@ import RoomChat from "./RoomChat";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import AOS from "aos";
+
 const ConsultRoom = () => {
   const [availableChatRooms, setAvailableChatRooms] = useState([]);
   const [chatList, setChatList] = useState([]);
 
   // get data logged user from localstorage
   const loggedUser = JSON.parse(localStorage.getItem("idUser"));
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     const getBookedDoctors = async () => {
@@ -36,12 +43,12 @@ const ConsultRoom = () => {
   return (
     <>
       {availableChatRooms.length === 0 ? (
-        <section id="doctors-list">
+        <section id="doctors-list" >
           <div className="row justify-content-md-center ">
             <div className="col-md-7 text-center">
               <p className="text-light-gray fw-light">Silahkan berkonsultasi dengan dokter, ceritakan apa yang kamu rasakan kepada dokter agar dokter dapat memberi solusi buat kamu ya!</p>
             </div>
-            <div className="col-md-6 d-flex justify-content-center">
+            <div className="col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-duration="1000">
               <img src={noConsult} />
             </div>
           </div>
