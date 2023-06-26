@@ -86,6 +86,7 @@ const BookingPage = () => {
                 navigate('/consult/chatroom')
             );
         })
+        .catch(err => console.log(err))
         // .then(navigate('/consult/chatroom'))
 
 
