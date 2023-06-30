@@ -33,6 +33,7 @@ const RoomChatDoctor = () => {
   // get data login from localstorage
   const loggedDoctor = JSON.parse(localStorage.getItem("idDoctor"));
 
+
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     await fetch(

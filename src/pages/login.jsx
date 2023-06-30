@@ -5,12 +5,21 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { PaymentContext } from "../context/paymentContext";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { payment, setPayment } = useContext(PaymentContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -60,15 +69,16 @@ function Login() {
           <div className="row justify-content-center align-items-center h-100">
             <div className="col-7">
               <div className="header">
-                <h1>Hallo, Carefriends</h1>
-                <p>Login dulu yuk sebelum kamu mengakses Carevul</p>
+                <h1 data-aos="fade-right" data-aos-duration="1000">Hallo, Carefriends</h1>
+                <p data-aos="fade-right" data-aos-duration="1000">Login dulu yuk sebelum kamu mengakses Carevul</p>
               </div>
               <div className="login-form">
                 <form id="form-login" onSubmit={handleLogin}>
-                  <label htmlFor="email" className="form-label">
+                  <label htmlFor="email" className="form-label"  data-aos="fade-right" data-aos-duration="1000">
                     Email
                   </label>
                   <input
+                    data-aos="fade-right" data-aos-duration="1000"
                     type="email"
                     className="form-control"
                     id="email"
@@ -77,10 +87,10 @@ function Login() {
                     placeholder="Masukkan Email"
                   />
 
-                  <label htmlFor="password" className="form-label mrgn-1">
+                  <label htmlFor="password" className="form-label mrgn-1" data-aos="fade-right" data-aos-duration="1000">
                     Password
                   </label>
-                  <input
+                  <input  data-aos="fade-right" data-aos-duration="1000"
                     type="password"
                     className="form-control"
                     id="password"
@@ -89,18 +99,18 @@ function Login() {
                     placeholder="Masukkan Password"
                   />
 
-                  <button className="btn-2" type="submit">
+                  <button className="btn-2" type="submit" data-aos="fade-right" data-aos-duration="1000">
                     Login
                   </button>
                 </form>
-                <p className="fsize-15 d-block text-center">
+                <p className="fsize-15 d-block text-center"  data-aos="fade-right" data-aos-duration="1000">
                   Kamu belum punya akun?
                   <Link to={"/regis"} style={{ textDecoration: "none" }}>
-                    <span className="regis">Daftar Disini</span>
+                    <span className="regis"  data-aos="fade-right" data-aos-duration="1000">Daftar Disini</span>
                   </Link>
                 </p>
                 <div>
-                <p className="fsize-15 d-block text-center">
+                <p className="fsize-15 d-block text-center" data-aos="fade-right" data-aos-duration="1000">
                   Kamu Dokter?
                   <Link to={"/logindoctor"} style={{ textDecoration: "none" }}>
                     <span className="regis">Login disini yuk!</span>

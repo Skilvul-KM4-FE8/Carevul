@@ -32,10 +32,11 @@ const RoomChat = () => {
   // get data login from localstorage
   const loggedUser = JSON.parse(localStorage.getItem("idUser"));
 
+
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    await fetch(
-      `https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`,
+
+    await fetch(`https://sk-chat-api.vercel.app/api/chat?roomId=${roomChat?.id}`,
       {
         method: "POST",
         headers: {
@@ -48,6 +49,7 @@ const RoomChat = () => {
         }),
       }
     );
+
 
     setInputChat("");
 
@@ -115,13 +117,13 @@ const RoomChat = () => {
                     />
                   </div>
                   <div className="col-md-2 col-lg-2 d-flex justify-content-end ">
-                    <Button
+                    <button
                       className="btn color-carevul-gradient text-white mx-1"
                       size="sm"
                       // style={{ width: "70%" }}
                     >
                       <RiSendPlaneLine className="fs-2" />
-                    </Button>
+                    </button>
                     <span
                       className="logindong btn text-carevul border-carevul"
                       onClick={handleRefreshChat}
